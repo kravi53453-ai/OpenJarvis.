@@ -1,4 +1,4 @@
-import { spawn, type ChildProcess } from 'node:child_process';
+
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -132,7 +132,8 @@ export function clearPartials(): number {
 }
 
 // ---------- local inference server (llama.cpp) ----------
-let server: ChildProcess | null = null;
+type ChildProcessLike = import('node:child_process').ChildProcess;
+let server: ChildProcessLike | null = null;
 let serverFile = '';
 let serverState: 'stopped' | 'starting' | 'running' | 'error' = 'stopped';
 const logTail: string[] = [];
@@ -142,13 +143,17 @@ export function findBinary(name: string): string | null {
   return null;
 }
 
-export function startServer(file: string, ctx = 1024, port = 8080): void {
+export async function startServer(file: string, ctx = 1024, port = 8080): Promise<void> {
   if (!/^[\w.-]+\.gguf$/.test(file) || !fs.existsSync(path.join(modelsDir(), file))) throw new Error('Model file not found. Download it first.');
+  if (process.env.OPENJARVIS_ANDROID === '1') {
+    throw new Error('Native offline inference is not installed in this Android build yet. Model downloads and management remain available.');
+  }
   const bin = findBinary('llama-server');
   if (!bin) throw new Error('llama-server not found. In Termux run: pkg install llama-cpp');
   const c = Math.min(4096, Math.max(512, Math.floor(ctx)));
   if (server) stopServer();
   logTail.length = 0; serverState = 'starting'; serverFile = file;
+  const { spawn } = await import('node:child_process');
   server = spawn(bin, ['-m', path.join(modelsDir(), file), '--host', '127.0.0.1', '--port', String(port), '-c', String(c), '-t', String(Math.max(1, Math.min(4, os.cpus().length)))], { stdio: ['ignore', 'pipe', 'pipe'] });
   const push = (b: Buffer) => { for (const l of b.toString().split('\n')) if (l.trim()) { logTail.push(l.slice(0, 200)); if (logTail.length > 40) logTail.shift(); } };
   server.stdout?.on('data', push); server.stderr?.on('data', push);

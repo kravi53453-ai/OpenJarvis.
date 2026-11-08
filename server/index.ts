@@ -220,7 +220,7 @@ async function api(req: http.IncomingMessage, res: http.ServerResponse, url: URL
   if (del) { try { offline.deleteModel(del[1]); } catch (e) { throw new HttpError(400, e instanceof Error ? e.message : 'Delete failed'); } return send(res, 200, { models: offline.listModels() }); }
   if (route === 'POST /api/offline/server/start') {
     const b = await readBody(req) as Record<string, unknown>;
-    try { offline.startServer(str(b.file, 120, 'file'), Number(b.contextSize) || getSettings().offline.contextSize); } catch (e) { throw new HttpError(400, e instanceof Error ? e.message : 'Cannot start'); }
+    try { await offline.startServer(str(b.file, 120, 'file'), Number(b.contextSize) || getSettings().offline.contextSize); } catch (e) { throw new HttpError(400, e instanceof Error ? e.message : 'Cannot start'); }
     return send(res, 200, await offline.offlineStatus());
   }
   if (route === 'POST /api/offline/server/stop') { offline.stopServer(); return send(res, 200, await offline.offlineStatus()); }
