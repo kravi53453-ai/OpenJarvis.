@@ -4,6 +4,23 @@ import { memory } from './memory';
 import { isNative, nativeExec, resumeAutomation, setAutomationActive } from './native';
 import type { Msg, PersonaId, ToolCall, ToolResult } from './types';
 
+/** Tiny deterministic replies for conversational openers; never pretends to answer factual questions. */
+export function localSmallTalk(input: string): string | null {
+  const q = input.toLocaleLowerCase().replace(/[!?.,。！？'"]/g, '').replace(/\\s+/g, ' ').trim();
+  if (!q || q.length > 100) return null;
+  if (/^(hi|hello|hey|hiya|good morning|good afternoon|good evening|namaste|नमस्ते|नमस्कार|हेलो|हाय)$/.test(q))
+    return 'Hello! I’m OpenJarvis. How can I help you today?';
+  if (/^(how are you|how are you doing|kaise ho|कैसे हो|आप कैसे हैं|क्या हाल है)$/.test(q))
+    return 'I’m doing well and ready to help. How are you?';
+  if (/^(i am ravi|i am ravi kumar|my name is ravi|मेरा नाम रवि है)$/.test(q))
+    return 'Nice to meet you, Ravi! What would you like to do today?';
+  if (/^(who are you|what are you|tum kaun ho|आप कौन हैं)$/.test(q))
+    return 'I’m OpenJarvis, your personal assistant. I can help with questions, ideas, and tasks.';
+  if (/^(thanks|thank you|धन्यवाद|शुक्रिया)$/.test(q))
+    return 'You’re welcome! I’m here whenever you need help.';
+  return null;
+}
+
 export const MAX_STEPS = 10;
 const uid = () => `${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 export const newMsg = (role: Msg['role'], text: string, extra: Partial<Msg> = {}): Msg => ({ id: uid(), role, text, ts: Date.now(), ...extra });
@@ -38,6 +55,11 @@ export interface RunCtl { stopped: boolean }
 export async function runAgent(history: Msg[], persona: PersonaId, push: (m: Msg) => void, ctl: RunCtl): Promise<string> {
   const all = [...history];
   const add = (m: Msg) => { all.push(m); push(m); };
+  // Handle simple greetings locally so they work instantly even without an API key,
+  // provider quota, or internet connection. This is not an automatic Cloud/Offline switch.
+  const latestUser = [...history].reverse().find(m => m.role === 'user' && !m.image)?.text?.trim() || '';
+  const smallTalk = localSmallTalk(latestUser);
+  if (smallTalk) { add(newMsg('assistant', smallTalk)); return smallTalk; }
   resumeAutomation();
   let svc = false; // visible foreground notification (with Stop) only while phone tools are in use
   try {
