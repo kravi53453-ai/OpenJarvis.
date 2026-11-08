@@ -1,0 +1,10 @@
+{
+  "name": "OpenJarvis",
+  "description": "OpenJarvis: Autonomous AI Voice Assistant & Phone Companion powered by Gemini with multi-persona layers, live voice control, accessibility automation, and persistent memory.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

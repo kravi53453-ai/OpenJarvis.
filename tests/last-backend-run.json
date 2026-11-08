@@ -1,0 +1,297 @@
+{
+ "at": "2026-11-08T05:59:11.248Z",
+ "total": 58,
+ "failed": 0,
+ "results": [
+  {
+   "n": "server starts on loopback only",
+   "pass": true,
+   "d": "OpenJarvis server → http://127.0.0.1:3946  (data: /data/data/com.termux/files/usr/tmp/oj-nPoZlD)\nListening on this device only (127.0.0.1). Set HOST=0.0.0.0 to allow other devices (token required).\n"
+  },
+  {
+   "n": "health endpoint",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "7 providers listed, all Not Configured",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "chat without key → clear not_configured error (no silent fallback)",
+   "pass": true,
+   "d": "{\"s\":400,\"j\":{\"ok\":false,\"code\":\"not_configured\",\"error\":\"Google Gemini has no API key. Open Menu → Providers and add your key.\"}}"
+  },
+  {
+   "n": "save key returns masked only",
+   "pass": true,
+   "d": "{\"id\":\"gemini\",\"label\":\"Google Gemini\",\"keyHelp\":\"aistudio.google.com → Get API key\",\"isChat\":true,\"model\":\"gemini-3.8-flash\",\"defaultModel\":\"gemini-3.8-flash\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••XXXX\",\"status\":\"untested\",\"message\":\"Key saved. Press Test connection.\",\"testedAt\":1794117550356}"
+  },
+  {
+   "n": "invalid key → invalid_key",
+   "pass": true,
+   "d": "{\"id\":\"gemini\",\"label\":\"Google Gemini\",\"keyHelp\":\"aistudio.google.com → Get API key\",\"isChat\":true,\"model\":\"gemini-3.8-flash\",\"defaultModel\":\"gemini-3.8-flash\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••XXXX\",\"status\":\"invalid_key\",\"message\":\"Provider rejected the key (HTTP 401).\",\"testedAt\":1794117550438}"
+  },
+  {
+   "n": "keys.json permissions 0600",
+   "pass": true,
+   "d": "600"
+  },
+  {
+   "n": "keys never written to settings.json",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "GET /api/settings has no keys",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "valid key → connected",
+   "pass": true,
+   "d": "{\"id\":\"gemini\",\"label\":\"Google Gemini\",\"keyHelp\":\"aistudio.google.com → Get API key\",\"isChat\":true,\"model\":\"gemini-3.8-flash\",\"defaultModel\":\"gemini-3.8-flash\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••3456\",\"status\":\"connected\",\"message\":\"Key accepted by provider.\",\"testedAt\":1794117550496}"
+  },
+  {
+   "n": "gemini returns tool call",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"\",\"toolCalls\":[{\"id\":\"fc_1794117550541_0\",\"name\":\"open_app\",\"args\":{\"app_name\":\"WhatsApp\"},\"raw\":{\"functionCall\":{\"name\":\"open_app\",\"args\":{\"app_name\":\"WhatsApp\"}},\"thoughtSignature\":\"SIG\"}}],\"mode\":\"cloud\",\"provider\":\"gemini\",\"model\":\"gemini-3.8-flash\"}}"
+  },
+  {
+   "n": "gemini follow-up with full history works (audit #1)",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"Done: launched\",\"toolCalls\":[],\"mode\":\"cloud\",\"provider\":\"gemini\",\"model\":\"gemini-3.8-flash\"}}"
+  },
+  {
+   "n": "follow-up includes original prompt + model functionCall turn + thoughtSignature",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "gemini key sent in header, not URL",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "browser mode: only memory tools exposed",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "openai: test connection → connected",
+   "pass": true,
+   "d": "{\"id\":\"openai\",\"label\":\"OpenAI\",\"keyHelp\":\"platform.openai.com → API keys\",\"isChat\":true,\"model\":\"gpt-4o-mini\",\"defaultModel\":\"gpt-4o-mini\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••3456\",\"status\":\"connected\",\"message\":\"Key accepted by provider.\",\"testedAt\":1794117550619}"
+  },
+  {
+   "n": "openai: tool call parsed",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"\",\"toolCalls\":[{\"id\":\"c1\",\"name\":\"tap\",\"args\":{\"text\":\"OK\"}}],\"mode\":\"cloud\",\"provider\":\"openai\",\"model\":\"gpt-4o-mini\"}}"
+  },
+  {
+   "n": "openai: tool result round trip",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"openai-compat saw tool: clicked\",\"toolCalls\":[],\"mode\":\"cloud\",\"provider\":\"openai\",\"model\":\"gpt-4o-mini\"}}"
+  },
+  {
+   "n": "openrouter: test connection → connected",
+   "pass": true,
+   "d": "{\"id\":\"openrouter\",\"label\":\"OpenRouter\",\"keyHelp\":\"openrouter.ai → Keys\",\"isChat\":true,\"model\":\"openai/gpt-4o-mini\",\"defaultModel\":\"openai/gpt-4o-mini\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••3456\",\"status\":\"connected\",\"message\":\"Key accepted by provider.\",\"testedAt\":1794117550681}"
+  },
+  {
+   "n": "openrouter: tool call parsed",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"\",\"toolCalls\":[{\"id\":\"c1\",\"name\":\"tap\",\"args\":{\"text\":\"OK\"}}],\"mode\":\"cloud\",\"provider\":\"openrouter\",\"model\":\"openai/gpt-4o-mini\"}}"
+  },
+  {
+   "n": "openrouter: tool result round trip",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"openai-compat saw tool: clicked\",\"toolCalls\":[],\"mode\":\"cloud\",\"provider\":\"openrouter\",\"model\":\"openai/gpt-4o-mini\"}}"
+  },
+  {
+   "n": "deepseek: test connection → connected",
+   "pass": true,
+   "d": "{\"id\":\"deepseek\",\"label\":\"DeepSeek\",\"keyHelp\":\"platform.deepseek.com → API keys\",\"isChat\":true,\"model\":\"deepseek-chat\",\"defaultModel\":\"deepseek-chat\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••3456\",\"status\":\"connected\",\"message\":\"Key accepted by provider.\",\"testedAt\":1794117550739}"
+  },
+  {
+   "n": "deepseek: tool call parsed",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"\",\"toolCalls\":[{\"id\":\"c1\",\"name\":\"tap\",\"args\":{\"text\":\"OK\"}}],\"mode\":\"cloud\",\"provider\":\"deepseek\",\"model\":\"deepseek-chat\"}}"
+  },
+  {
+   "n": "deepseek: tool result round trip",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"openai-compat saw tool: clicked\",\"toolCalls\":[],\"mode\":\"cloud\",\"provider\":\"deepseek\",\"model\":\"deepseek-chat\"}}"
+  },
+  {
+   "n": "nvidia: test connection → connected",
+   "pass": true,
+   "d": "{\"id\":\"nvidia\",\"label\":\"NVIDIA NIM\",\"keyHelp\":\"build.nvidia.com → Get API key\",\"isChat\":true,\"model\":\"meta/llama-3.1-8b-instruct\",\"defaultModel\":\"meta/llama-3.1-8b-instruct\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••3456\",\"status\":\"connected\",\"message\":\"Key accepted by provider.\",\"testedAt\":1794117550787}"
+  },
+  {
+   "n": "nvidia: tool call parsed",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"\",\"toolCalls\":[{\"id\":\"c1\",\"name\":\"tap\",\"args\":{\"text\":\"OK\"}}],\"mode\":\"cloud\",\"provider\":\"nvidia\",\"model\":\"meta/llama-3.1-8b-instruct\"}}"
+  },
+  {
+   "n": "nvidia: tool result round trip",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"openai-compat saw tool: clicked\",\"toolCalls\":[],\"mode\":\"cloud\",\"provider\":\"nvidia\",\"model\":\"meta/llama-3.1-8b-instruct\"}}"
+  },
+  {
+   "n": "openrouter test uses authenticated /auth/key endpoint",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "anthropic: connected",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "anthropic chat",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"claude says hi\",\"toolCalls\":[],\"mode\":\"cloud\",\"provider\":\"anthropic\",\"model\":\"claude-haiku-5-5\"}}"
+  },
+  {
+   "n": "anthropic headers (x-api-key + version)",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "gemini TTS PCM wrapped into valid WAV (audit #3)",
+   "pass": true,
+   "d": "{\"mime\":\"audio/wav\",\"audio\":\"UklGRgQCAABXQVZFZm10IBAAAAABAAEAwF0AAIC7AAACABAAZGF0YeABAAAAAAAAAAAAAAA"
+  },
+  {
+   "n": "elevenlabs: connected",
+   "pass": true,
+   "d": "{\"id\":\"elevenlabs\",\"label\":\"ElevenLabs (voice only)\",\"keyHelp\":\"elevenlabs.io → Profile → API keys\",\"isChat\":false,\"model\":\"eleven_multilingual_v2\",\"defaultModel\":\"eleven_multilingual_v2\",\"configured\":true,\"source\":\"app\",\"masked\":\"••••••••3456\",\"status\":\"connected\",\"message\":\"Key accepted by provider.\",\"testedAt\":1794117550894}"
+  },
+  {
+   "n": "elevenlabs TTS returns mp3",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"mime\":\"audio/mpeg\",\"audio\":\"SUQzZmFrZQ==\",\"voice\":\"elevenlabs\"}}"
+  },
+  {
+   "n": "elevenlabs missing voice id → clear error",
+   "pass": true,
+   "d": "{\"s\":400,\"j\":{\"ok\":false,\"code\":\"bad_request\",\"error\":\"ElevenLabs voice ID is missing or invalid. Set it under Providers → Voice.\"}}"
+  },
+  {
+   "n": "status shows offline + reachable",
+   "pass": true,
+   "d": "{\"mode\":\"offline\",\"provider\":\"local\",\"model\":\"local-model\",\"status\":\"connected\",\"message\":\"Local server reachable.\",\"user\":\"Ravi\"}"
+  },
+  {
+   "n": "offline chat uses local server only",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"ok\":true,\"text\":\"\",\"toolCalls\":[{\"id\":\"c1\",\"name\":\"tap\",\"args\":{\"text\":\"OK\"}}],\"mode\":\"offline\",\"provider\":\"local\",\"model\":\"local-model\"}}"
+  },
+  {
+   "n": "offline: no auth header sent",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "offline: tools not sent unless enabled",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "offline: cloud TTS refused",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "offline: image refused when vision off",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "offline with dead server → error, NOT silent cloud fallback",
+   "pass": true,
+   "d": "{\"s\":502,\"j\":{\"ok\":false,\"code\":\"network\",\"error\":\"Network error: fetch failed\"}}"
+  },
+  {
+   "n": "status shows offline error",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "system info has RAM/disk",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "catalog entries have compat verdicts",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "download rejects http://",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "download rejects private hosts (SSRF)",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "download rejects bad filename",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "start server refuses missing model",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "validation rejects bad payload",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "oversized body rejected (413)",
+   "pass": true,
+   "d": "413"
+  },
+  {
+   "n": "cross-origin POST blocked",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "DNS-rebinding Host header blocked",
+   "pass": true,
+   "d": "403"
+  },
+  {
+   "n": "path traversal blocked",
+   "pass": true,
+   "d": "403"
+  },
+  {
+   "n": "serves index.html with CSP",
+   "pass": true,
+   "d": "200"
+  },
+  {
+   "n": "static asset served",
+   "pass": true,
+   "d": "200"
+  },
+  {
+   "n": "real key only in 0600 keys.json",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "delete key → not_configured",
+   "pass": true,
+   "d": ""
+  }
+ ]
+}

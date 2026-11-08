@@ -1,0 +1,177 @@
+{
+ "at": "2026-11-08T02:30:16.295Z",
+ "total": 34,
+ "failed": 0,
+ "results": [
+  {
+   "n": "home shows \"Hi Ravi\" and OpenJarvis title",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "status pill says Cloud · No API key (honest, not fake-connected)",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "guidance to add key is shown",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "7 provider cards",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "key input is a password field & masked after save",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "bad key → \"Invalid key\" badge",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "good key → \"Connected\" badge",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "Gemini card shows \"Selected for chat\"",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "pill shows Cloud · Google Gemini · Connected",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "reply appears in visible transcript (audit #2)",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "user bubble kept in history",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "conversation history sent to model (audit #14)",
+   "pass": true,
+   "d": "3"
+  },
+  {
+   "n": "text typed while busy is NOT cleared/lost (audit #12)",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "tool call → result → final answer round trip in UI",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "remember tool wrote real memory note",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "memory shows realistic storage limit, not \"1 GB\"",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "Kajal image attach works → downscaled JPEG data URL (audit #13)",
+   "pass": true,
+   "d": "data:image/jpeg;base64,/9j/4AA"
+  },
+  {
+   "n": "image reaches provider as image/jpeg",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "persona switched to Adam",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "attach menu available for Adam too",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "chat history persists after reload",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "Dark theme applies",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "Light theme applies",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "Low-power mode applies",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "About shows Ravi profile and honest limits",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "permissions screen in browser makes no fake grant buttons",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "model manager shows RAM/storage + catalog compat badges",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "missing llama-server reported honestly",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "pill shows Offline · local model · Connected",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "offline reply came from local server and made no cloud call",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "switching back to Cloud is explicit via menu",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "voice mode shows animated orb overlay",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "no horizontal overflow at 360px width",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "no console/page errors",
+   "pass": true,
+   "d": ""
+  }
+ ]
+}

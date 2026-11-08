@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenJarvis</string>
+    <string name="a11y_desc">Lets OpenJarvis read what is on screen and tap, swipe and type in apps ONLY when you give it a command. Password fields are hidden from it. You can switch this off at any time.</string>
+</resources>

@@ -1,0 +1,10 @@
+# Changelog — 1.0.0 (rebuild of the prototype)
+**Architecture:** replaced Express+Vite+Tailwind+@google/genai (and a client-side phone simulation) with a zero-dependency Node server, an esbuild-built React UI (248 KB JS/CSS, lazy-loaded screens) and a native Android project. Old UI/server/VirtualPhone code is preserved under `extras/`.
+**Added:** provider adapters (Gemini, OpenAI, OpenRouter, DeepSeek, Claude, NVIDIA NIM, ElevenLabs) with Test connection and statuses; server-side key store; Cloud/Offline modes with status pill; Offline model manager (system check, catalog, pause/resume/SHA-256 downloads, llama-server control); chat transcript and history; Light/Dark/System + low-power; Ravi profile; image attach for both personas with downscaling; persistent tool loop (remember/recall + native tools); voice mode orb with safe loop; native Android project (AccessibilityService, CameraX, calls with confirmation, contacts, speech/TTS, MediaProjection, notifications, permissions onboarding); tests; docs.
+**Fixed / removed:** see `docs/AUDIT_FIX_MAP.md` (all 33 findings). Removed fake seeded memories/notifications, false "autonomous phone control"/"Accessibility granted" claims, the 1 GB memory claim, AI Studio leftovers, duplicate files (identical PNG/prompts/SVGs) and ~6 MB of reference PNGs from the shipped `public/` (moved to `docs/ui-references/`).
+
+## 1.0.1 — Android build preparation (still no APK)
+* Line-by-line compile review of all Kotlin; fixed likely errors: local-function references → function-typed vals (`Tools.kt`), CameraX `bindToLifecycle` now gets non-null locals (`CameraActivity.kt`), TTS `setLanguage/setVoice` explicit calls (`JarvisBridge.kt`), qualified `AccessibilityService.GestureResultCallback`.
+* `.github/workflows/android.yml` rewritten: builds on push, installs SDK 34, publishes `OpenJarvis-debug.apk` (+SHA-256) to a GitHub Release, always uploads `build-log`.
+* Added `scripts/publish-to-github.sh` (Termux, token never stored) and `docs/INSTALL_ON_PHONE.md`.
+* Not changed: server, web UI, tests (re-run and still passing).

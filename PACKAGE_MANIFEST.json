@@ -1,0 +1,963 @@
+{
+ "name": "OpenJarvis",
+ "version": "1.0.0",
+ "fileCount": 191,
+ "totalBytes": 13923904,
+ "files": [
+  {
+   "path": ".env.example",
+   "bytes": 795,
+   "sha256": "9516a828b5e145e09bc8532c729380a9c79d1138a0f37ee03fdbb09b506ad86b"
+  },
+  {
+   "path": ".github/workflows/android.yml",
+   "bytes": 2401,
+   "sha256": "76d46deedc4e753f3918bfd8d8de2e4d9eb801c4510ece84182f5d9f34c3f376"
+  },
+  {
+   "path": ".gitignore",
+   "bytes": 126,
+   "sha256": "8630f2652ab5953b75f0efade9d373b8453b36afa39f556802567503f1be03f3"
+  },
+  {
+   "path": "android/app/build.gradle.kts",
+   "bytes": 1249,
+   "sha256": "1426cafe93193eb23acc9df17be21e2e9f6710d7e5963adb2804f46c4fbb9849"
+  },
+  {
+   "path": "android/app/proguard-rules.pro",
+   "bytes": 163,
+   "sha256": "92911c7227d80aa7116071dca137b0464eb52d72322089e093277552026bd877"
+  },
+  {
+   "path": "android/app/src/main/AndroidManifest.xml",
+   "bytes": 4854,
+   "sha256": "16416001d5c79f34d7fca3f1b3c9acc1dd484b85244bd62a1e5b9ecdab372d06"
+  },
+  {
+   "path": "android/app/src/main/assets/offline.html",
+   "bytes": 1039,
+   "sha256": "4c360c3a456d23eba7eb942fb4b1c19869275f3e31b98953c8ecad3417be7740"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/AutomationService.kt",
+   "bytes": 1934,
+   "sha256": "ea3faab750c8ac9359f17a9349fc4086154fe2ff9a31a269066e20a0e58f1ae9"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/CameraActivity.kt",
+   "bytes": 13260,
+   "sha256": "4d3f956d1758ebac3aa5a69373ca5dda3cabd2969426406b514cff034b5a3746"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/JarvisAccessibilityService.kt",
+   "bytes": 8479,
+   "sha256": "b7ecde1f867ae60b16d75f70a12be5dd672ae51767ead74de25c236d4f28382a"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/JarvisBridge.kt",
+   "bytes": 10065,
+   "sha256": "f0e1d267b3f9671b46605d3d7ca597cb133cae8155621894c0b77baca9c71654"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/MainActivity.kt",
+   "bytes": 5859,
+   "sha256": "beeb3e4f3b31805db5a4e4a53937d5ce6bac425815d1fd27f4e3ddc52d13dc7b"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/MediaSaver.kt",
+   "bytes": 1397,
+   "sha256": "5e9f5a78b5844da21a43633e88585c9083ef1274358e83dd0c1a7896897913a0"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/ScreenCaptureService.kt",
+   "bytes": 4832,
+   "sha256": "045fcf20a539ade7b74a08a13c351798d7782dc938af1709d08d2f7f44dc0c43"
+  },
+  {
+   "path": "android/app/src/main/java/com/openjarvis/app/Tools.kt",
+   "bytes": 19448,
+   "sha256": "4446cba6be63e573fc2a9bfbaee620875e03100c3bb2bc438484ff6ba6f814e0"
+  },
+  {
+   "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+   "bytes": 12750,
+   "sha256": "8f500dee3e4c4013e40bbcec5f864bbd7d5f3f4be8ab8c2bbc5cf8c6203a9073"
+  },
+  {
+   "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+   "bytes": 5899,
+   "sha256": "5dd959239c658cc21e46ecab3b2424ae50204fc0890af708099c65100388cf42"
+  },
+  {
+   "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+   "bytes": 22175,
+   "sha256": "e00d525c4bf7def92035b219de98d680e3f277d3f975273462953ceab7eda319"
+  },
+  {
+   "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+   "bytes": 48081,
+   "sha256": "af70dd57a6fae63e3d3a205bac56c18ff6f1b6ea5fedf19bd0e886ba33f85c3f"
+  },
+  {
+   "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+   "bytes": 82776,
+   "sha256": "1e2792359c3a22ff459fea0ee2d5b38f104809ff6c389e48b77b0a286d5418b4"
+  },
+  {
+   "path": "android/app/src/main/res/values/strings.xml",
+   "bytes": 288,
+   "sha256": "4255f84b819786a78806306d18fe639c16cde2bf99eafd881b6dd9a8cc572c60"
+  },
+  {
+   "path": "android/app/src/main/res/values/themes.xml",
+   "bytes": 307,
+   "sha256": "8d77f8a522eb4457295d6072d7bf3d207129c6726fc95ad412b07ec1a2d49ead"
+  },
+  {
+   "path": "android/app/src/main/res/xml/accessibility_service_config.xml",
+   "bytes": 456,
+   "sha256": "4e50978eeb369d99acf9df1dc9255c07e45add526b8f242efa0e929115a28ed5"
+  },
+  {
+   "path": "android/app/src/main/res/xml/file_paths.xml",
+   "bytes": 188,
+   "sha256": "4512fd1a9752083278e31c45c85cfd5a607efaeb68bac6aee719eba9d196dfd1"
+  },
+  {
+   "path": "android/app/src/main/res/xml/network_security_config.xml",
+   "bytes": 400,
+   "sha256": "5ac01eb5411eac03c832e8cc10b8d6a9b62e73ad0d284e2e4b1fd15589dd2f04"
+  },
+  {
+   "path": "android/build.gradle.kts",
+   "bytes": 142,
+   "sha256": "48f7c9d13c50fa379dce0a2b7c028bcffe60d428eada35b12cfb8af28b31c962"
+  },
+  {
+   "path": "android/gradle.properties",
+   "bytes": 136,
+   "sha256": "347a5f0b203b9bcbcbfbfc36f6a687333d0ad2c37dc52acc2439942cdb2fe640"
+  },
+  {
+   "path": "android/gradle/wrapper/gradle-wrapper.properties",
+   "bytes": 200,
+   "sha256": "efa4245a68c56c8bb873611ade567981727262d994b419f77d1be873ad6ffd02"
+  },
+  {
+   "path": "android/settings.gradle.kts",
+   "bytes": 279,
+   "sha256": "3a02a4306453c602a1ab228a719c015e8ec3e79aac7ec93de061e953126ccef9"
+  },
+  {
+   "path": "CHANGELOG.md",
+   "bytes": 2087,
+   "sha256": "1e15b28d8f196931fab78065d14e9f8e609eb53a6a7d12afcdf0a03d54df88ca"
+  },
+  {
+   "path": "dist-server/server.mjs",
+   "bytes": 51217,
+   "sha256": "bc586db28e850694df27f0c9e19b38c2284febacb0c20cc1f552112f74b0e27e"
+  },
+  {
+   "path": "dist/assets/app-GMAQENAN.js",
+   "bytes": 204578,
+   "sha256": "17d7695951cb4e57516b3863927d76006c2429ea11af0819685c7754e577a918"
+  },
+  {
+   "path": "dist/assets/app-SMFJEJFN.css",
+   "bytes": 8238,
+   "sha256": "637a18da4b6445c0d2f73e37a49a8a03447c64d88aa7e260f251f8ce98ef8b32"
+  },
+  {
+   "path": "dist/assets/chunk-3QJUUBFP.js",
+   "bytes": 6075,
+   "sha256": "514ae0804592fe7e20e0c736e301e3bdf4fe4a7fe011716329177892464ca53f"
+  },
+  {
+   "path": "dist/assets/chunk-6XFFMQMT.js",
+   "bytes": 1432,
+   "sha256": "10e4d01b0613aa14a4c1fda9ce5895f5838bd016e848c1a61b98ba35617b4251"
+  },
+  {
+   "path": "dist/assets/chunk-APSV7JLR.js",
+   "bytes": 8889,
+   "sha256": "a014c44381672463bbb668ea67279f61b14e0a6c21a2ff4dc7946398ec382c4c"
+  },
+  {
+   "path": "dist/assets/chunk-BJLQ7SFA.js",
+   "bytes": 5815,
+   "sha256": "1294a4540dbced86b4527a94a7872c7601dfc435f5c67db7b05acd7b85d3c2ee"
+  },
+  {
+   "path": "dist/assets/chunk-CRGEKZDF.js",
+   "bytes": 1036,
+   "sha256": "1e94f246c45c3b6344389c077295578bc584ad6830561e2a638efa58da29529c"
+  },
+  {
+   "path": "dist/assets/chunk-IIJ4OB4I.js",
+   "bytes": 10163,
+   "sha256": "604c46767c093f7cb45b957d701a31d57b72d6de20c23adba17603bb44fef804"
+  },
+  {
+   "path": "dist/assets/chunk-LZEGWFLZ.js",
+   "bytes": 517,
+   "sha256": "a8221d6106be441835c7c31e68a4338fd6af7979f24dc57ddc83ffa0a704ed70"
+  },
+  {
+   "path": "dist/assets/chunk-M7ZNTLKJ.js",
+   "bytes": 1877,
+   "sha256": "70730a57c1e22bfe29a62823a98e99baf753572872cdc9564563b1285fb065f0"
+  },
+  {
+   "path": "dist/assets/chunk-NH56FUQE.js",
+   "bytes": 1946,
+   "sha256": "6cbd5be5bf2f0587945048877c63be4bc9aaae8b2752c39973869439076ebaea"
+  },
+  {
+   "path": "dist/assets/chunk-SCPRL4I5.js",
+   "bytes": 3828,
+   "sha256": "bb23ecc8061890a006f03d5ad8d1950cb46bed92574b370fdd88499b2a731e38"
+  },
+  {
+   "path": "dist/assets/jarvis_logo.webp",
+   "bytes": 112018,
+   "sha256": "f362124b77a837c6390664a0fc3deab82c42e306f3dd1e72a63897c27dad1014"
+  },
+  {
+   "path": "dist/assets/ui_adam.webp",
+   "bytes": 131244,
+   "sha256": "3a841272743c0a93b6571ca94688e9933f9a9a237043e735fd2875b418620b59"
+  },
+  {
+   "path": "dist/assets/ui_kajal.webp",
+   "bytes": 158766,
+   "sha256": "0a3970be424576693a9f061b411c73ad28704c38c2b50fce4e8f3a1feb364c4f"
+  },
+  {
+   "path": "dist/index.html",
+   "bytes": 582,
+   "sha256": "f4222d4d9a403e0a037299113e35c316a1ac6e60b2ff4e00aae1f04676693458"
+  },
+  {
+   "path": "docs/ANDROID_APP.md",
+   "bytes": 4160,
+   "sha256": "51dcfd439016891b9667c7bf679c9c52ab07f185245dfb7b620d58f9381f4785"
+  },
+  {
+   "path": "docs/archive/BUILD_AI_CAPABILITY.md",
+   "bytes": 1478,
+   "sha256": "b7981fe4c93891ad9d709ae452821094c1f8c131fbbffd3ec3057bedbd0ddbb3"
+  },
+  {
+   "path": "docs/archive/FEATURES_AND_LIMITS.md",
+   "bytes": 1709,
+   "sha256": "e151d2210ea029bff70d6f75f47228c23362b8e2953b687210c05b5e44a03d1e"
+  },
+  {
+   "path": "docs/archive/PACKAGE_MANIFEST.old.json",
+   "bytes": 16763,
+   "sha256": "9ee4d85424749fc32579e8d157ad675f92f841a5db22ea02c61e3410915222d0"
+  },
+  {
+   "path": "docs/archive/README.md",
+   "bytes": 2746,
+   "sha256": "8e7a67b0b227f56260c7c450d961a316327c1b0739153f9452832ca6d2b484d7"
+  },
+  {
+   "path": "docs/archive/TERMUX_INSTALL_TEMPLATE.md",
+   "bytes": 975,
+   "sha256": "9de69ad2eb12befdd124bf2c9686425ce706d140f88389b5214b8c7b2806bde9"
+  },
+  {
+   "path": "docs/archive/termux-prerequisites.sh",
+   "bytes": 323,
+   "sha256": "e71af7393f8853ab3f670f08e46a1ff95a6c94b2c9538753e4d0bdd1ee42eb43"
+  },
+  {
+   "path": "docs/AUDIT_FIX_MAP.md",
+   "bytes": 3502,
+   "sha256": "b5883164a3f09650b54cad99da20a35e927d88d97be9630e4e0be253867ed5b0"
+  },
+  {
+   "path": "docs/INSTALL_ON_PHONE.md",
+   "bytes": 3208,
+   "sha256": "926c685199d222d9574fbc57b8b923d9e3ea31489d20c1dd1f3c24fea3badc80"
+  },
+  {
+   "path": "docs/LIMITATIONS.md",
+   "bytes": 1731,
+   "sha256": "8acb22b45b2a127cbb41503610394fc77d5aec35266d2c9620438f15234bbaa9"
+  },
+  {
+   "path": "docs/OPENJARVIS_PREMIUM_UI_OLD_REFERENCE.html",
+   "bytes": 20701,
+   "sha256": "d6fec54e28c5f4759d3f797014f9b716f23b5a66737d3d2e96844d73859b9b06"
+  },
+  {
+   "path": "docs/OPENJARVIS_UI_DESIGN_REFERENCE.pdf",
+   "bytes": 5597481,
+   "sha256": "6251cb897bae4f60bf2ba47a53adde2563a98e79e67ca06b67f1f50da98a448f"
+  },
+  {
+   "path": "docs/PERMISSIONS.md",
+   "bytes": 1468,
+   "sha256": "df78e4a866247e27e8c20d04b29731cd313cb196253448e502ad25b59a9e1e12"
+  },
+  {
+   "path": "docs/PROVIDERS.md",
+   "bytes": 1793,
+   "sha256": "a1664935b6f76a00309d44d196a21d386bb32a27b6be2f466dd1cfb4a4064454"
+  },
+  {
+   "path": "docs/TERMUX.md",
+   "bytes": 1583,
+   "sha256": "2fccbfc6da5b10e9ba7f8fc25c4b3b0bd8f54f08cb06a167d548c084f7f2c412"
+  },
+  {
+   "path": "docs/ui-references/openjarvis_clean_neon_ui_reference.png",
+   "bytes": 2066956,
+   "sha256": "c7f47fc034e0436cb39a1d9d70553f1149d5352f7aef53523575b76070ce0aa0"
+  },
+  {
+   "path": "docs/ui-references/OPENJARVIS_NEON_UI_REFERENCE.png",
+   "bytes": 2019704,
+   "sha256": "c069d2106ddd3a94cb62634b9bfdab43392fb0523ce3f198b788331439fcf4dc"
+  },
+  {
+   "path": "docs/ui-references/ui_reference_kajal.png",
+   "bytes": 2017593,
+   "sha256": "740f5a492c82c6e8a93653aca6f5ade1baa450ae43db3257060e7778914dc40e"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/AndroidManifest.xml",
+   "bytes": 1131,
+   "sha256": "d5e3c4b52f13020711daec49ad0dcc825d995e74eca08c63ff1ab01f25a075ef"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/java/com/openjarvis/app/OpenJarvisAccessibilityService.kt",
+   "bytes": 810,
+   "sha256": "b095c180136883a06a15d94e8d9ec90c2db2d412208e2c3dcec5313d22e7090e"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/res/values/strings.xml",
+   "bytes": 183,
+   "sha256": "503c7b9dbf115a8402033bffd011d547cbb7078c3605b132fb7ce64a89ae2d21"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/res/xml/accessibility_service_config.xml",
+   "bytes": 414,
+   "sha256": "df9962873778df072ce3f5d8b575e271fa7dbe3294b8448db7388a7a184c4c25"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/README.md",
+   "bytes": 1665,
+   "sha256": "7d2149513e58baa05d4d56a2ec44cf64e215a549355f1bb0dd6bd0cc06c560a4"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/backend/.gitignore",
+   "bytes": 21,
+   "sha256": "46e080e08ef92166cd53a8bdeaa89f25323c0826d9e508b45a655b8efb842dab"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/backend/package.json",
+   "bytes": 294,
+   "sha256": "39f80a375079e5ac72a6524adf5f68a4e35fad619a3df448225764e39d05f73b"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/backend/src/server.js",
+   "bytes": 3656,
+   "sha256": "50565e2f1cb13b8d2c93efe31cb1458307df7e353069312b06318c4c02b572e7"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/ARCHITECTURE.md",
+   "bytes": 743,
+   "sha256": "5929d6f2a713921cd7b13f7544acddb5cc3c9c852afd3da74ab111323d38bd05"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/FEATURES_AND_LIMITS.md",
+   "bytes": 1083,
+   "sha256": "08bf5e3e0aab64d14e2dee20644ac6c442bc58c0cfb8dd1fc357707f8a5d1413"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/KNOWN_LIMITATIONS.md",
+   "bytes": 1103,
+   "sha256": "52f8d073d8c1047548a0364a1c36807d30fc64077f080c7c17c1e3f70733ec6b"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/MASTER_BUILD_PROMPT.md",
+   "bytes": 4236,
+   "sha256": "108bab83cc02fb40cbbb562e240b7b3b6ecd0872386d10825fbe845770dfed23"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/PERMISSIONS_MATRIX.md",
+   "bytes": 1489,
+   "sha256": "c8c8775565a9ed93ddb2e3c5300e5077f7413b70acdf60039151bc87918c04cc"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/TEST_PLAN.md",
+   "bytes": 1387,
+   "sha256": "a62707d89822e8201452ef04e6c5655daacc2106c3649466c4f0eb8f2e503125"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/VOICE_CHAT.md",
+   "bytes": 871,
+   "sha256": "5d86400637fbc9e88d695fc256b9255f793f2475ee00ca8119b3f3f510bd9e31"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/README.md",
+   "bytes": 3630,
+   "sha256": "911ac79662a6a830aa5f2a97879a114d21f6793bea49c6d15ef1e73232146dcc"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/scripts/build.sh",
+   "bytes": 367,
+   "sha256": "8d8822629367241a86a791cab562eb9af851e55552ae84b0d2e06d5279e6132a"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/scripts/termux-setup.sh",
+   "bytes": 233,
+   "sha256": "7b24266a4e7d60a559e8c3d9611cb41e471020a4ba9180798274b16f28d3c89b"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/app.js",
+   "bytes": 8764,
+   "sha256": "174ac50dcee44687804d312bd9e1b890fc49b4d975385305f8d25afc9a417938"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/assets/adam-avatar.svg",
+   "bytes": 631,
+   "sha256": "5167761e6b5c812380c27f87f79de02e32b75a6eefbeb02c5380ad64ed0d5f1d"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/assets/kajal-avatar.svg",
+   "bytes": 635,
+   "sha256": "d3cfcf98915b7e20ed63d07ccab8e620c7ecae74a8e32f72f6924586ab0f8b38"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/assets/openjarvis.svg",
+   "bytes": 697,
+   "sha256": "b25097d5e7f82154b36063b65e483a75c9b71b1c02da6698f779fea3777ce1c9"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/config.js",
+   "bytes": 135,
+   "sha256": "5152f2e860468b7a5415038680344959411d420c5ccc54d83c3c248ad05fb74a"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/index.html",
+   "bytes": 2799,
+   "sha256": "598aef05402b346d63cc040c3067b6529d4473a6f894461e839cf1d2b705a900"
+  },
+  {
+   "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/styles.css",
+   "bytes": 7026,
+   "sha256": "1495e68882378ed534373f4e23239d1fe59773f7120079153aaa70a3da52fed6"
+  },
+  {
+   "path": "extras/legacy-web-ui/App.tsx",
+   "bytes": 10339,
+   "sha256": "78852e3e252580605041a186912a65f1891bb509a2ad3190504fe2b12a73fb5e"
+  },
+  {
+   "path": "extras/legacy-web-ui/components/ApiScreen.tsx",
+   "bytes": 7974,
+   "sha256": "3c03f96a6bf340e559263d8f568f71bdd28b8ebc0b5b9a32187c7dd3bb350996"
+  },
+  {
+   "path": "extras/legacy-web-ui/components/HomeScreen.tsx",
+   "bytes": 16191,
+   "sha256": "1ea13c088b08807eecd220786841957c630c4e4b90a805a6cf8af8c7471d7e32"
+  },
+  {
+   "path": "extras/legacy-web-ui/components/MemoryScreen.tsx",
+   "bytes": 7326,
+   "sha256": "3aa82f1cde85b51c481275d97b06388319c70e099d3358e41ae5be95c4c362b6"
+  },
+  {
+   "path": "extras/legacy-web-ui/components/NavigationDrawer.tsx",
+   "bytes": 8320,
+   "sha256": "1eff4b0e2053ec39ffa6adb4da428621593138dbef0b46fee56053b366abb5a3"
+  },
+  {
+   "path": "extras/legacy-web-ui/components/PermissionsScreen.tsx",
+   "bytes": 8294,
+   "sha256": "45f094b64b25f3000bebd1a5475f07502d5e6f3aecf351f1743a6368a21bafd8"
+  },
+  {
+   "path": "extras/legacy-web-ui/index.css",
+   "bytes": 1432,
+   "sha256": "f416886db43b800cd3d771de598f0faefa923f3d8cba8910fc9d0848f45bca6b"
+  },
+  {
+   "path": "extras/legacy-web-ui/index.html",
+   "bytes": 1056,
+   "sha256": "6980aba3fad308702d08c932c8e5eb4562cd6508ea3e3673fecd3316462ffaea"
+  },
+  {
+   "path": "extras/legacy-web-ui/main.tsx",
+   "bytes": 159,
+   "sha256": "30d02ee59cb6576973dea4368093b2dcae692a40668f288fdbc66a114873fcd3"
+  },
+  {
+   "path": "extras/legacy-web-ui/metadata.json",
+   "bytes": 357,
+   "sha256": "b3ef2c1ae946ec3776ac92781e3c0a701a5daf06bb79abc338987e49f84bd857"
+  },
+  {
+   "path": "extras/legacy-web-ui/package.json",
+   "bytes": 903,
+   "sha256": "885c9170f38b076cc5cdf18a608a57b61ba74907f4af41a4f5028867b243ab68"
+  },
+  {
+   "path": "extras/legacy-web-ui/server.ts",
+   "bytes": 10353,
+   "sha256": "1d69350f645e835e24d4143e77b56bbc150d2d673a6df0994f3645de52d3302f"
+  },
+  {
+   "path": "extras/legacy-web-ui/services/memory.ts",
+   "bytes": 2921,
+   "sha256": "ee448be06d0745b1fb78954917a564f07504b5d8d7a2aa83bdfb12a4faa0a999"
+  },
+  {
+   "path": "extras/legacy-web-ui/services/speech.ts",
+   "bytes": 5796,
+   "sha256": "ce11f76a0265cdf9490df30d87d2833a6efcc0254c9d18487cb548e21ab2a50d"
+  },
+  {
+   "path": "extras/legacy-web-ui/tsconfig.json",
+   "bytes": 561,
+   "sha256": "cbc914147cc208c35cb5f6d405f0f0bc3c1c76ae76bf45bbc4f588b924492d2a"
+  },
+  {
+   "path": "extras/legacy-web-ui/types/jarvis.ts",
+   "bytes": 1245,
+   "sha256": "8815718fdd7ccff1b23061c9b22d33a5d9a2530bb8cf64435700850207f0fe02"
+  },
+  {
+   "path": "extras/legacy-web-ui/vite.config.ts",
+   "bytes": 705,
+   "sha256": "a7aa711292e5ad7eb10f7a17f5f34fbbf75c7b7c24d59cb0212c60bc493c3208"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/.env.example",
+   "bytes": 73,
+   "sha256": "9ce6ceb36a09b71d884a0df68d11ea92fc5c4caff464ee119a98961df346fe91"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/.gitignore",
+   "bytes": 69,
+   "sha256": "6490c28a3bcd6fcc9f372ded2200e7f7642ba3da5aacd7710be5ffe2e8fa343b"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/app.py",
+   "bytes": 2119,
+   "sha256": "5277963b0ef89e00c31b2de43a2dd5514b4e4257b318336c904a4861b01366bf"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/core/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/core/chat_engine.py",
+   "bytes": 1431,
+   "sha256": "ca28fdbc89752576349bda7c975921394dbf8e749e81f49ffcdfc552b12dfdd5"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/core/device_info.py",
+   "bytes": 768,
+   "sha256": "f8cd47f98a845ccce5bb1fbeacd0231e3e8e7bf5c30674cb70d51a5580f4dd42"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/core/state_manager.py",
+   "bytes": 1081,
+   "sha256": "eeaed08e50ffb5035bbb255d4183a3911366fd2ceb18a099088c11a8de0ed153"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/debugger/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/debugger/logger.py",
+   "bytes": 252,
+   "sha256": "cfabe0333d9efd75ea7b461a67154ee59dc7d9b966caf28b8e279593bc85fa57"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/debugger/self_heal.py",
+   "bytes": 471,
+   "sha256": "d509ed718fc271796ea79d468ec417967ef849e2a89bda51311d6bd48867c301"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/freefire_craftland/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/freefire_craftland/blueprint.py",
+   "bytes": 866,
+   "sha256": "5b91cb742d2637050e9693a2b060bfc13b34332f80b62c92d432638fb734c338"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/README.md",
+   "bytes": 1362,
+   "sha256": "de05be1f532e539111251bd5ff3e5eca50052731bcd15d61cf5488b3d33b3778"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/social_hub/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/social_hub/youtube_feed.py",
+   "bytes": 711,
+   "sha256": "5594fc80e370549e648c30d6409189c9e55d6b0114f193cd2ac346b04c20664c"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/static/index.html",
+   "bytes": 1826,
+   "sha256": "3e13f9b7173f0ee8156892e2b3e98eaace96b8748c525d54eecb46207f757aff"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/updater/__init__.py",
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "path": "extras/python-termux-starter/OpenJarvis/updater/ota.py",
+   "bytes": 1059,
+   "sha256": "567d5ab22c22b91d0429fe556f835c2fa78649a7f432328626835e65a1ec385a"
+  },
+  {
+   "path": "extras/virtual-phone-demo/virtualDevice.ts",
+   "bytes": 15971,
+   "sha256": "d0e0ff3a2e5736349add022db7fd17b323ae233384206ba5c7377f5dffffaaca"
+  },
+  {
+   "path": "extras/virtual-phone-demo/VirtualPhone.tsx",
+   "bytes": 36031,
+   "sha256": "806fb8b0b846720c111f2e260eb61fbfb64469aa2234104759605d596382a1fa"
+  },
+  {
+   "path": "index.html",
+   "bytes": 479,
+   "sha256": "6b161700e9a9c3784996af480e25bda01adb1d116b3754b15ad127ebe609f1c7"
+  },
+  {
+   "path": "knowledge/craftland-research/craftland_repository_manifest.json",
+   "bytes": 9420,
+   "sha256": "15e3352aeb254f1a3d9af2598c6c14b4499143e5aae9186402d4218823c7ac64"
+  },
+  {
+   "path": "knowledge/craftland-research/OpenJarvis_Craftland_Repository_Research_Bundle_v2.pdf",
+   "bytes": 19738,
+   "sha256": "43fb4ac4332d0f468a6862a2942c9723c48e677447211accc0705efdd1555a33"
+  },
+  {
+   "path": "knowledge/craftland-research/README_Craftland_Repository.txt",
+   "bytes": 720,
+   "sha256": "79ffa300b2f73016d0a1304ae91502d860d0cc47e32e67c12628df93276fc724"
+  },
+  {
+   "path": "package.json",
+   "bytes": 1026,
+   "sha256": "ba1c00a5866e1e1aacd416d4a326b09e7fc93d8cfa5c68376ddd949b13f9a31a"
+  },
+  {
+   "path": "prompts/FINAL_CLAUDE_BUILD_PROMPT.md",
+   "bytes": 6384,
+   "sha256": "9c631c63da5f45e8c95ba26aded0c16f8191bde7c7891cc0eca613a15db370e3"
+  },
+  {
+   "path": "prompts/OPENJARVIS_MASTER_PROMPT_REFERENCE.md",
+   "bytes": 7956,
+   "sha256": "c3f6f38451e41c7db81e63466727172792c3f43c19271d1babcc6b0a6506f5b1"
+  },
+  {
+   "path": "public/assets/jarvis_logo.webp",
+   "bytes": 112018,
+   "sha256": "f362124b77a837c6390664a0fc3deab82c42e306f3dd1e72a63897c27dad1014"
+  },
+  {
+   "path": "public/assets/ui_adam.webp",
+   "bytes": 131244,
+   "sha256": "3a841272743c0a93b6571ca94688e9933f9a9a237043e735fd2875b418620b59"
+  },
+  {
+   "path": "public/assets/ui_kajal.webp",
+   "bytes": 158766,
+   "sha256": "0a3970be424576693a9f061b411c73ad28704c38c2b50fce4e8f3a1feb364c4f"
+  },
+  {
+   "path": "README.md",
+   "bytes": 4155,
+   "sha256": "ca69a368483048b39d3be4224b013ae937ec5987d38297aa9f477a25950e613b"
+  },
+  {
+   "path": "scripts/build.mjs",
+   "bytes": 1934,
+   "sha256": "424f9ae4f3564d2d7b69b5130e1e9a8fae0c1df6047c3ac2448bc95abf2dd237"
+  },
+  {
+   "path": "scripts/gen-manifest.mjs",
+   "bytes": 1105,
+   "sha256": "5210d689287872792a467e034967c18b79a2c6f7dea7dce310e1ca316dc13e79"
+  },
+  {
+   "path": "scripts/publish-to-github.sh",
+   "bytes": 1526,
+   "sha256": "a71f891d2ef630951cb70fd26416d19a1ea6e0750cbab160f99c2abe594e6943"
+  },
+  {
+   "path": "scripts/termux-setup.sh",
+   "bytes": 906,
+   "sha256": "cf1474df56ac7a40142ba12e2a11ff246c47caeb534a442a984490353f840bf3"
+  },
+  {
+   "path": "server/index.ts",
+   "bytes": 19369,
+   "sha256": "af662722807a79f25386283a3667610a61900685f11aaa799e6e6f1ec8fae395"
+  },
+  {
+   "path": "server/offline.ts",
+   "bytes": 11023,
+   "sha256": "9e8f8e9f99c8da2bf607657f4a847d1fb6328a5b29cd7109b1aa16995ad971b5"
+  },
+  {
+   "path": "server/providers.ts",
+   "bytes": 16132,
+   "sha256": "847ebfe9cbabd54add3bf00c32a435eab41ede59d35600a9342d6735a7f39ba8"
+  },
+  {
+   "path": "server/store.ts",
+   "bytes": 4408,
+   "sha256": "d3fa8950b6efd86c11fe1172b6126f19c30e79c6ffc2dfda5afc0176173304b4"
+  },
+  {
+   "path": "server/tools.ts",
+   "bytes": 6401,
+   "sha256": "c68db2e18734ddbc5e91bbf79eae203c853835efc9ff0ffb0b57010bdfa6c624"
+  },
+  {
+   "path": "server/types.ts",
+   "bytes": 1222,
+   "sha256": "9c056af385acfdc66836c1f313099886f5007386a126c1b09c51c67eb5877f1e"
+  },
+  {
+   "path": "src/App.tsx",
+   "bytes": 7227,
+   "sha256": "e158830d96bf4d635d440e3c6ac56bd6138ff4504b21204e5fc2eab8fbaae3c0"
+  },
+  {
+   "path": "src/global.d.ts",
+   "bytes": 24,
+   "sha256": "da5bf71d48cf909584a01c80b445f730507068f5b34c920f352e2bfcf0315e4c"
+  },
+  {
+   "path": "src/lib/agent.ts",
+   "bytes": 3974,
+   "sha256": "f2abb05626d2727c6b95daa2a89f373ccd911cb28dd16936e134c00e8b6dbcbc"
+  },
+  {
+   "path": "src/lib/api.ts",
+   "bytes": 2758,
+   "sha256": "667ee3d95033bbc450cd3031d9278f16e3cfa506d7efbcfb5659097749a298f2"
+  },
+  {
+   "path": "src/lib/image.ts",
+   "bytes": 1001,
+   "sha256": "a432e28a1ef8863da95392f7a153d2effacaea1e6f526d24dc89ee2f21f3c6a5"
+  },
+  {
+   "path": "src/lib/memory.ts",
+   "bytes": 1419,
+   "sha256": "3f36386e7db70e2b00a82c640e5420529fce27faf950567ee80eb5ff44bed241"
+  },
+  {
+   "path": "src/lib/native.ts",
+   "bytes": 4245,
+   "sha256": "79faabb5b1db6ccc23603de535b53a576e67cc18ad6bd50ad196be4e3607d352"
+  },
+  {
+   "path": "src/lib/prefs.ts",
+   "bytes": 1084,
+   "sha256": "08a183f59e6dc4f3b5993f9a83131c08b13436f1c860b9544f2e9378aea5669c"
+  },
+  {
+   "path": "src/lib/speech.ts",
+   "bytes": 6213,
+   "sha256": "eede10c6a4c8bda022bd685055b9fb47995443e9c08a0957435c2ea5c01c6468"
+  },
+  {
+   "path": "src/lib/storage.ts",
+   "bytes": 663,
+   "sha256": "2dd4e3d070d4f9091febb2086e3b206e17ef990ba92db35bfadd994a6473e4c3"
+  },
+  {
+   "path": "src/lib/types.ts",
+   "bytes": 1332,
+   "sha256": "8b289dfbe73173d2b01c4bf3c8063646c901534ea98cd37f8f499d64c01c3cdc"
+  },
+  {
+   "path": "src/main.tsx",
+   "bytes": 157,
+   "sha256": "700cfe9e3aad835432060fb4d73588e298d743de270d81ee75b36cb3754021b4"
+  },
+  {
+   "path": "src/styles.css",
+   "bytes": 8341,
+   "sha256": "6b27ba9be93d387b095038ddd0137217e19d1ed8e4d157fa5c59eaf37f07749d"
+  },
+  {
+   "path": "src/ui/Chat.tsx",
+   "bytes": 6556,
+   "sha256": "154927890a3cfd3cb69f8734d98ed3d140cfa0b61edc5be7c656a8aba7b64686"
+  },
+  {
+   "path": "src/ui/Drawer.tsx",
+   "bytes": 2816,
+   "sha256": "911470266916122ac0aa1cc6b056f5600ae072da1db52aad6e273773e0ba7fea"
+  },
+  {
+   "path": "src/ui/Frame.tsx",
+   "bytes": 578,
+   "sha256": "4465d662240c73b3c63bee2f934624f0ccbcff034a404a1573e2787ab7cecc32"
+  },
+  {
+   "path": "src/ui/Icon.tsx",
+   "bytes": 1581,
+   "sha256": "b4551ea6641e28a63beae0a1cc9e6599e430fc3bacf02dee1a614836d3cac7bb"
+  },
+  {
+   "path": "src/ui/MemoryScreen.tsx",
+   "bytes": 2037,
+   "sha256": "f213d39cebfbaee8f0b757978e8bdfa31e6be224d9ccaf954a749f6faedf0ff9"
+  },
+  {
+   "path": "src/ui/OfflineScreen.tsx",
+   "bytes": 10231,
+   "sha256": "bb8791b2cf3ad005d252cebe6bad88e8d8c743eb59d10fb7a404f12312d179d0"
+  },
+  {
+   "path": "src/ui/PermissionsScreen.tsx",
+   "bytes": 6572,
+   "sha256": "a7c4ff76ecdd7757faaba8f16080989bd92d6a997e0b23a863b7535b7ccaa0b5"
+  },
+  {
+   "path": "src/ui/ProvidersScreen.tsx",
+   "bytes": 7448,
+   "sha256": "822becbbc22c25e25d17ed9d2d78f7dabd7fdd2109fb5e993f67dbc15c5df927"
+  },
+  {
+   "path": "src/ui/SettingsScreen.tsx",
+   "bytes": 4033,
+   "sha256": "50a1268ce0a5d5e0528458d38662f8826ef3cce26a34c9ca420089d80f1337cf"
+  },
+  {
+   "path": "src/ui/VoiceMode.tsx",
+   "bytes": 3494,
+   "sha256": "e0ba5c4a299b069e42800227cf74e52c0948d49c1faa6fba542d01926a36c3b1"
+  },
+  {
+   "path": "TEST_REPORT.md",
+   "bytes": 3193,
+   "sha256": "c8a579d609f2f27ef22d9369cad7d97a63697ac2116c9ab2d8bc379e309e953c"
+  },
+  {
+   "path": "tests/backend.test.mjs",
+   "bytes": 14286,
+   "sha256": "2c92bd85704ea8766859d09e3c050e7cb102f4ae627b50d6a3ba6a3dbefc64e7"
+  },
+  {
+   "path": "tests/download.test.mjs",
+   "bytes": 5227,
+   "sha256": "7662a6530fbf9b67c1e9badf7258c385882ed6d4e32206fbe28e07e7298cbeef"
+  },
+  {
+   "path": "tests/lan-lowmem.test.mjs",
+   "bytes": 4314,
+   "sha256": "85e518483a5842ea87563c76a5ee247ee7a3aaada303f06e8b1516d200449fd9"
+  },
+  {
+   "path": "tests/last-backend-run.json",
+   "bytes": 10982,
+   "sha256": "800a4220083662c6e1837e111d7f2fee5afa53c365ba833674958358ed977a5d"
+  },
+  {
+   "path": "tests/last-download-run.json",
+   "bytes": 2273,
+   "sha256": "3be058462488ff193b5a49db48e065664b066594df9612b4e1c35d2546390fbd"
+  },
+  {
+   "path": "tests/last-lan-lowmem-run.json",
+   "bytes": 776,
+   "sha256": "9714e7aef20a9f3fa6509b4c03b6fbd346a12ca729586b39dfe63deddc1589d6"
+  },
+  {
+   "path": "tests/last-ui-run.json",
+   "bytes": 3131,
+   "sha256": "da89b9cf46d61c096a6359714757da4da3bfe124be2182096634c0ca22c95520"
+  },
+  {
+   "path": "tests/screenshots/01-home-light.png",
+   "bytes": 53164,
+   "sha256": "af4499422871f35abd4a7b810768379faf6771e91960625512a6c7dec3417c4a"
+  },
+  {
+   "path": "tests/screenshots/02-providers.png",
+   "bytes": 54641,
+   "sha256": "8c54c28a94d16ddff8a141b460eb0ad01c92ab45d1db2e5fb236b242700727a1"
+  },
+  {
+   "path": "tests/screenshots/03-chat.png",
+   "bytes": 21481,
+   "sha256": "fffeb35d5dda021e97f1056e378b1c5ca3720427e42ab5138fb095a50a1bc6bd"
+  },
+  {
+   "path": "tests/screenshots/04-memory.png",
+   "bytes": 44084,
+   "sha256": "5ec339c6a19ff304a0799db0a129c50f11947c63226ba3ea51f85baa0b63ff98"
+  },
+  {
+   "path": "tests/screenshots/05-settings-dark.png",
+   "bytes": 47043,
+   "sha256": "c453b6874be508e7a12138856829838754db9b40e288bc1d6dc4204fdbdc164a"
+  },
+  {
+   "path": "tests/screenshots/06-permissions-browser.png",
+   "bytes": 34711,
+   "sha256": "dde747b5ae2564ca9ea4d5001321293e3be04e9c88fdc81471a781a9d4a20305"
+  },
+  {
+   "path": "tests/screenshots/07-offline.png",
+   "bytes": 57702,
+   "sha256": "f03f40d60ca91a465c7940a33a529f39d94c907171c2d1cd90820cc59cfb238f"
+  },
+  {
+   "path": "tests/screenshots/08-voice.png",
+   "bytes": 36476,
+   "sha256": "f16aa99dd5451aab73799463099120c2290f3707d0b52c6f10155766cf648363"
+  },
+  {
+   "path": "tests/typecheck-stubs/react.d.ts",
+   "bytes": 958,
+   "sha256": "5c64789c877508fecbce8ebf0a8f70076fc45b4496bd038008e9b9c69c1a7568"
+  },
+  {
+   "path": "tests/ui.test.mjs",
+   "bytes": 12898,
+   "sha256": "750978ebba8ebdf2406c6298945c47642544b2233fb0ffc4c3c8624f22807a80"
+  },
+  {
+   "path": "tsconfig.json",
+   "bytes": 377,
+   "sha256": "0b09efd3448f32d5126f0e3cb22d02002795b7e2c04d89bf3846259bc9556261"
+  },
+  {
+   "path": "tsconfig.server.json",
+   "bytes": 286,
+   "sha256": "bf8943c3f976ffa7363ee437860f5768e67ab384131d61cac576266e0cb4bcad"
+  }
+ ]
+}

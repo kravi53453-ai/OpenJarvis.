@@ -1,0 +1,315 @@
+{
+  "repository": "OpenJarvis Craftland Knowledge Repository",
+  "version": "v2 research bundle",
+  "generated_date": "2026-11-06",
+  "coverage_status": "PARTIAL / NOT COMPLETE",
+  "important_note": "This bundle is an honest verified research snapshot, not a complete inventory of all 42 modules' APIs, signatures, parameters, return types, or images.",
+  "modules_42": [
+    "STD Library",
+    "List",
+    "Map",
+    "Math",
+    "Strings",
+    "Convert",
+    "AI",
+    "Read Table Content",
+    "Scene",
+    "Items",
+    "Combat",
+    "Safe Zone",
+    "Checkpoint",
+    "HUD",
+    "Property Formula",
+    "Level Object",
+    "Chat Channel",
+    "Playable",
+    "Animation",
+    "Behavior Tree",
+    "Avatar",
+    "Profile",
+    "Airdrop",
+    "Global",
+    "Player",
+    "Team",
+    "Mechanism Parameters",
+    "Workflow",
+    "Physics",
+    "Camera",
+    "Minimap",
+    "Game Results",
+    "Input System",
+    "Collection",
+    "Economy",
+    "Data Storage",
+    "Football",
+    "Morph",
+    "Dyeing",
+    "Game Time",
+    "Performance",
+    "Social"
+  ],
+  "verified_api_name_lists": {
+    "List": [
+      "Length",
+      "Obtain",
+      "Set",
+      "Append",
+      "Remove At",
+      "New",
+      "Contain",
+      "Append Range",
+      "Remove",
+      "Index Of",
+      "Last Index Of",
+      "Clear",
+      "Reverse",
+      "Clone",
+      "Insert",
+      "Shuffle",
+      "Is Equal",
+      "Max",
+      "Min"
+    ],
+    "STD Library": [
+      "Get All Players",
+      "Get All Teams",
+      "Set All Players Move Status",
+      "Log Info",
+      "Break loop",
+      "Continue to next",
+      "Return",
+      "Wait For Next Frame",
+      "Wait for Millisecond",
+      "NOT",
+      "Color Get",
+      "Check null",
+      "Get Server Timestamp",
+      "Get Server Region",
+      "Set property",
+      "Get property",
+      "This Entity",
+      "Get global",
+      "Get Owner",
+      "Clone",
+      "SpawnNextWave",
+      "Get Type",
+      "Type Is",
+      "Is Sub Type Of",
+      "Has Component",
+      "Dispatch Event",
+      "Filter Entity",
+      "Add Script",
+      "Remove Script",
+      "Has Script",
+      "Destroy",
+      "Add Tag",
+      "Remove Tag",
+      "Has Tag",
+      "Set Active",
+      "Set Parent",
+      "Get Children",
+      "Get Child By Index",
+      "Get Child By Name",
+      "Get Parent",
+      "Clear All Children",
+      "Set Property Smoothly",
+      "Create From Prefab",
+      "Instantiate Prefab",
+      "Create Bot",
+      "Destroy Bot",
+      "Create Damage Num",
+      "Log Warning",
+      "Log Error",
+      "Upload Game Result",
+      "Add Component",
+      "Remove Component",
+      "Get Local Player",
+      "Broadcast Custom Event",
+      "Get Local Language",
+      "Capture Screenshot",
+      "Paste Component",
+      "Get Type Name",
+      "Set Material Property",
+      "Get All Spectators",
+      "Get Local Spectator",
+      "String To Big Float"
+    ]
+  },
+  "api_signature_samples": [
+    {
+      "module": "List",
+      "api": "Length",
+      "parameters": "Not individually verified in this bundle",
+      "return_type": "Not individually verified",
+      "server_client": "Module/API page says check per API",
+      "platform": "Module/API page says check per API",
+      "status": "API name listed on official module page"
+    },
+    {
+      "module": "List",
+      "api": "Obtain",
+      "parameters": "Not individually verified in this bundle",
+      "return_type": "Not individually verified",
+      "server_client": "Both Server and Client (module page pattern; verify API page)",
+      "platform": "Both Mobile and PC (module page pattern; verify API page)",
+      "status": "API name listed; do not infer signature"
+    },
+    {
+      "module": "Map",
+      "api": "Obtain",
+      "parameters": "Map: Map; Key: Object",
+      "return_type": "Object (value)",
+      "server_client": "Both Server and Client",
+      "platform": "Both Mobile and PC",
+      "status": "Verified from individual API page"
+    },
+    {
+      "module": "Map",
+      "api": "New",
+      "parameters": "Not shown in extracted page content",
+      "return_type": "Not shown in extracted page content",
+      "server_client": "Both Server and Client",
+      "platform": "Both Mobile and PC",
+      "status": "Individual page confirms dictionary creation; signature not captured"
+    },
+    {
+      "module": "Map",
+      "api": "Set",
+      "parameters": "Not shown in extracted page content",
+      "return_type": "Not shown in extracted page content",
+      "server_client": "Both Server and Client",
+      "platform": "Both Mobile and PC",
+      "status": "Individual page confirms API; signature not captured"
+    },
+    {
+      "module": "Level Object",
+      "api": "Create Level Object",
+      "parameters": "Position: Vector3; Level Object: Int",
+      "return_type": "Created Entity: Entity<LevelObject> (output)",
+      "server_client": "Both Server and Client",
+      "platform": "Both Mobile and PC",
+      "status": "Verified from individual API page"
+    },
+    {
+      "module": "STD Library",
+      "api": "Return",
+      "parameters": "Optional return data",
+      "return_type": "Returns to calling location; exact generic signature not captured",
+      "server_client": "Both Server and Client",
+      "platform": "Both Mobile and PC",
+      "status": "Individual API page confirms behavior/platform"
+    },
+    {
+      "module": "STD Library",
+      "api": "Add Script",
+      "parameters": "Not captured in this bundle",
+      "return_type": "Not captured in this bundle",
+      "server_client": "Both Server and Client",
+      "platform": "Both Mobile and PC",
+      "status": "Individual API page confirms compatibility"
+    },
+    {
+      "module": "STD Library",
+      "api": "Paste Component",
+      "parameters": "Not captured in this bundle",
+      "return_type": "Not captured in this bundle",
+      "server_client": "Both Server and Client",
+      "platform": "Only PC",
+      "status": "Individual API page confirms PC-only"
+    }
+  ],
+  "official_sources": [
+    {
+      "title": "Main 42-module index",
+      "url": "https://ffcraftland.garena.com/en/docs/module-3",
+      "note": "Official module index; 42 modules shown."
+    },
+    {
+      "title": "API reference index",
+      "url": "https://ffcraftland.garena.com/en/docs/api",
+      "note": "Official API documentation entry point."
+    },
+    {
+      "title": "STD Library module",
+      "url": "https://ffcraftland.garena.com/en/docs/module-1",
+      "note": "Official STD Library components/properties and API names."
+    },
+    {
+      "title": "List module",
+      "url": "https://ffcraftland.garena.com/en/docs/module-2",
+      "note": "Official List API names and descriptions."
+    },
+    {
+      "title": "Type reference",
+      "url": "https://ffcraftland.garena.com/en/docs/type",
+      "note": "Official Type list; includes many game/UI/resource types."
+    },
+    {
+      "title": "Enum reference",
+      "url": "https://ffcraftland.garena.com/en/docs/enum/",
+      "note": "Official Enum reference index."
+    },
+    {
+      "title": "Event reference",
+      "url": "https://ffcraftland.garena.com/en/docs/event/",
+      "note": "Official Event reference."
+    },
+    {
+      "title": "Mobile tutorial: Block Script",
+      "url": "https://ffcraftland.garena.com/en/tutorial/cl/3",
+      "note": "Mobile tutorial covering block editor and logic."
+    },
+    {
+      "title": "PC user manual",
+      "url": "https://ffcraftland.garena.com/en/tutorial/fe/1",
+      "note": "PC user manual sections."
+    },
+    {
+      "title": "PC additional script notes",
+      "url": "https://ffcraftland.garena.com/en/tutorial/fe/1-10/",
+      "note": "IF/ELSE, loops, break/continue, code script notes."
+    },
+    {
+      "title": "Create Level Object API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-26-49",
+      "note": "Declaration and input/output details."
+    },
+    {
+      "title": "Map New API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-3-549",
+      "note": "Map New API page."
+    },
+    {
+      "title": "Map Obtain API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-3-550",
+      "note": "Map Obtain parameters and return."
+    },
+    {
+      "title": "Map Set API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-3-551",
+      "note": "Map Set API page."
+    },
+    {
+      "title": "Return API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-1-26/",
+      "note": "Return API page."
+    },
+    {
+      "title": "Paste Component API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-1-951/",
+      "note": "PC-only API example."
+    },
+    {
+      "title": "Add Script API",
+      "url": "https://ffcraftland.garena.com/en/docs/api-1-471/",
+      "note": "Add Script API page."
+    }
+  ],
+  "image_policy": "No generated or fabricated image is presented as an official Garena screenshot. Official tutorial pages containing original Garena images are linked; the original image files have not all been extracted and audited in this bundle.",
+  "known_gaps": [
+    "Inner API inventory for 40 remaining modules is incomplete.",
+    "All signatures/parameters/return types have not been captured per API.",
+    "Enums and all Event entries require full extraction and verification.",
+    "Official screenshots have not been individually downloaded, deduplicated, attributed, and mapped to each block/API."
+  ]
+}

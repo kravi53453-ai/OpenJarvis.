@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Talks to the OpenJarvis server on this phone (127.0.0.1) or your configured server. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Voice commands, and sound when recording video. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- In-app camera (photo/video) with a visible preview. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Find a contact's number when you ask to call someone. -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- Place a call ONLY after you confirm it on a dialog. Without it the dialer opens instead. -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- Only when you ask for your location (last known position). -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Notifications you ask for, and the notice shown during screen capture. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Report Bluetooth on/off and paired device names (no scanning). -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <!-- Required by Android for the screen-capture (MediaProjection) service. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <!-- Keeps a task running (with a visible Stop notification) while OpenJarvis operates other apps. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- Android 11 and older: needed to list paired Bluetooth device names. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" android:maxSdkVersion="30" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+    <queries>
+        <!-- Lets open_app find launchable apps without the restricted QUERY_ALL_PACKAGES permission. -->
+        <intent><action android:name="android.intent.action.MAIN" /><category android:name="android.intent.category.LAUNCHER" /></intent>
+        <intent><action android:name="android.speech.RecognitionService" /></intent>
+        <intent><action android:name="android.intent.action.TTS_SERVICE" /></intent>
+    </queries>
+
+    <application
+        android:label="OpenJarvis"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:usesCleartextTraffic="false"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OpenJarvis">
+
+        <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask" android:configChanges="orientation|screenSize|keyboardHidden|uiMode" android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CameraActivity" android:exported="false" android:screenOrientation="portrait" android:theme="@style/Theme.OpenJarvis" />
+
+        <service android:name=".AutomationService" android:exported="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="user_requested_phone_automation" />
+        </service>
+
+        <service android:name=".ScreenCaptureService" android:exported="false" android:foregroundServiceType="mediaProjection" />
+
+        <service
+            android:name=".JarvisAccessibilityService"
+            android:exported="true"
+            android:label="OpenJarvis screen control"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter><action android:name="android.accessibilityservice.AccessibilityService" /></intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <provider android:name="androidx.core.content.FileProvider" android:authorities="${applicationId}.files" android:exported="false" android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

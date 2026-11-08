@@ -1,0 +1,72 @@
+{
+ "at": "2026-11-08T05:59:17.525Z",
+ "total": 13,
+ "failed": 0,
+ "results": [
+  {
+   "n": "download starts",
+   "pass": true,
+   "d": "{\"s\":200,\"j\":{\"id\":\"test.gguf\",\"file\":\"test.gguf\",\"url\":\"http://127.0.0.1:41387/m.gguf\",\"totalBytes\":0,\"doneBytes\":0,\"state\":\"running\",\"expectedSha\":\"e3763dd36d06446a5ff521f2395671e6579eab5dbb2dcd0f6b7c79d388e812e1\"}}"
+  },
+  {
+   "n": "progress reported",
+   "pass": true,
+   "d": "{\"id\":\"test.gguf\",\"file\":\"test.gguf\",\"url\":\"http://127.0.0.1:41387/m.gguf\",\"totalBytes\":2097152,\"doneBytes\":262144,\"state\":\"running\",\"expectedSha\":\"e3763dd36d06446a5ff521f2395671e6579eab5dbb2dcd0f6b7c79d388e812e1\"}"
+  },
+  {
+   "n": "pause works",
+   "pass": true,
+   "d": "paused"
+  },
+  {
+   "n": ".part file kept on pause",
+   "pass": true,
+   "d": "294912"
+  },
+  {
+   "n": "resume completes",
+   "pass": true,
+   "d": "{\"id\":\"test.gguf\",\"file\":\"test.gguf\",\"url\":\"http://127.0.0.1:41387/m.gguf\",\"totalBytes\":2097152,\"doneBytes\":2097152,\"state\":\"done\",\"expectedSha\":\"e3763dd36d06446a5ff521f2395671e6579eab5dbb2dcd0f6b7c79d388e812e1\",\"sha256\":\"e3763dd36d06446a5ff521f2395671e6579eab5dbb2dcd0f6b7c79d388e812e1\"}"
+  },
+  {
+   "n": "resume used HTTP Range (no restart from zero)",
+   "pass": true,
+   "d": "1"
+  },
+  {
+   "n": "downloaded bytes identical to source",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "SHA-256 verified and stored",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "model listed with size",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "wrong SHA-256 → integrity FAILED and nothing installed",
+   "pass": true,
+   "d": "{\"id\":\"bad.gguf\",\"file\":\"bad.gguf\",\"url\":\"http://127.0.0.1:41387/m.gguf\",\"totalBytes\":2097152,\"doneBytes\":2097152,\"state\":\"error\",\"error\":\"Integrity check FAILED: SHA-256 does not match. File deleted.\",\"expectedSha\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"sha256\":\"e3763dd36d06446a5ff521f2395671e6579eab5dbb2dcd0f6b7c79d388e812e1\"}"
+  },
+  {
+   "n": "cancel deletes partial file",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "delete installed model",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "start refuses non-installed model",
+   "pass": true,
+   "d": ""
+  }
+ ]
+}

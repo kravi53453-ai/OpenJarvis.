@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Lightweight 2D character motion. Portraits move as a whole; this is not 3D rigging or true lip-sync. */
+.oj-character-idle {
+  transform-origin: 50% 45%;
+  animation: oj-idle-float 7s ease-in-out infinite;
+  will-change: transform;
+}
+.oj-character-speaking {
+  transform-origin: 50% 48%;
+  animation: oj-speaking-motion .9s ease-in-out infinite;
+}
+.oj-avatar-idle {
+  animation: oj-avatar-float 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes oj-idle-float {
+  0%, 100% { transform: scale(1.025) translate3d(0, 0, 0) rotate(0deg); }
+  22% { transform: scale(1.04) translate3d(-3px, -3px, 0) rotate(-.35deg); }
+  50% { transform: scale(1.055) translate3d(2px, -6px, 0) rotate(.4deg); }
+  76% { transform: scale(1.04) translate3d(3px, -2px, 0) rotate(.15deg); }
+}
+@keyframes oj-speaking-motion {
+  0%, 100% { transform: scale(1.035) translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: scale(1.045) translate3d(-2px, -2px, 0) rotate(-.25deg); }
+  50% { transform: scale(1.06) translate3d(2px, -4px, 0) rotate(.3deg); }
+  75% { transform: scale(1.045) translate3d(1px, -1px, 0) rotate(-.1deg); }
+}
+@keyframes oj-avatar-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -3px, 0) rotate(1deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oj-character-idle, .oj-character-speaking, .oj-avatar-idle { animation: none !important; }
+}

@@ -1,0 +1,455 @@
+{
+  "package": "OpenJarvis",
+  "main_runtime": "React + Vite + Express + TypeScript",
+  "apk": false,
+  "production_build_verified": false,
+  "craftland_repository_complete": false,
+  "included_source_archives": [
+    "OpenJarvis_FINAL_Claude_Analyze_Build_APK_Termux.zip",
+    "OpenJarvis_Termux_Starter.zip",
+    "OpenJarvis(1).zip",
+    "OpenJarvis_Craftland_Repository_Research_Bundle_v2.zip"
+  ],
+  "files": [
+    {
+      "path": ".env.example",
+      "size_bytes": 445,
+      "sha256": "b6d12c728de0aac8b0bc6239e53aa8088c1431bcb4f9a3d61e5e8a2df1c7c400"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 73,
+      "sha256": "db691f14fcf678985362a42c6aedb581e42cd6bb99962ce1b44aea460fb2a4df"
+    },
+    {
+      "path": "BUILD_AI_CAPABILITY.md",
+      "size_bytes": 1328,
+      "sha256": "208e024c09c74a6264b6b208ce4392446ae0378efbe79135a0f63c6874e31fdc"
+    },
+    {
+      "path": "CLAUDE_HANDOFF_README.md",
+      "size_bytes": 1016,
+      "sha256": "278e93a93266996c8c824376ab37a9b7f5e6dff38ee380fc3a33cb7dc7a254f5"
+    },
+    {
+      "path": "FEATURES_AND_LIMITS.md",
+      "size_bytes": 1559,
+      "sha256": "3e547f756629934804624fbebf96c935bcc4647249fbcd6191d1b19a77d060bf"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 2596,
+      "sha256": "f1233d5cd1d588eccfaf5a73b10350d2df7da464f1095d095a19854296c5f4f7"
+    },
+    {
+      "path": "TERMUX_INSTALL_TEMPLATE.md",
+      "size_bytes": 825,
+      "sha256": "fda2dcda6b4a5b5cda40afa449afe83bdbaba38125d21dd78f00adb349d18369"
+    },
+    {
+      "path": "docs/OPENJARVIS_NEON_UI_REFERENCE.png",
+      "size_bytes": 2019704,
+      "sha256": "c069d2106ddd3a94cb62634b9bfdab43392fb0523ce3f198b788331439fcf4dc"
+    },
+    {
+      "path": "docs/OPENJARVIS_PREMIUM_UI_OLD_REFERENCE.html",
+      "size_bytes": 20701,
+      "sha256": "d6fec54e28c5f4759d3f797014f9b716f23b5a66737d3d2e96844d73859b9b06"
+    },
+    {
+      "path": "docs/OPENJARVIS_UI_DESIGN_REFERENCE.pdf",
+      "size_bytes": 5597481,
+      "sha256": "6251cb897bae4f60bf2ba47a53adde2563a98e79e67ca06b67f1f50da98a448f"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/README.md",
+      "size_bytes": 3630,
+      "sha256": "911ac79662a6a830aa5f2a97879a114d21f6793bea49c6d15ef1e73232146dcc"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/README.md",
+      "size_bytes": 1665,
+      "sha256": "7d2149513e58baa05d4d56a2ec44cf64e215a549355f1bb0dd6bd0cc06c560a4"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/AndroidManifest.xml",
+      "size_bytes": 1131,
+      "sha256": "d5e3c4b52f13020711daec49ad0dcc825d995e74eca08c63ff1ab01f25a075ef"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/java/com/openjarvis/app/OpenJarvisAccessibilityService.kt",
+      "size_bytes": 810,
+      "sha256": "b095c180136883a06a15d94e8d9ec90c2db2d412208e2c3dcec5313d22e7090e"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/res/values/strings.xml",
+      "size_bytes": 183,
+      "sha256": "503c7b9dbf115a8402033bffd011d547cbb7078c3605b132fb7ce64a89ae2d21"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/android/app/src/main/res/xml/accessibility_service_config.xml",
+      "size_bytes": 414,
+      "sha256": "df9962873778df072ce3f5d8b575e271fa7dbe3294b8448db7388a7a184c4c25"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/backend/.gitignore",
+      "size_bytes": 21,
+      "sha256": "46e080e08ef92166cd53a8bdeaa89f25323c0826d9e508b45a655b8efb842dab"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/backend/package.json",
+      "size_bytes": 294,
+      "sha256": "39f80a375079e5ac72a6524adf5f68a4e35fad619a3df448225764e39d05f73b"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/backend/src/server.js",
+      "size_bytes": 3656,
+      "sha256": "50565e2f1cb13b8d2c93efe31cb1458307df7e353069312b06318c4c02b572e7"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/ARCHITECTURE.md",
+      "size_bytes": 743,
+      "sha256": "5929d6f2a713921cd7b13f7544acddb5cc3c9c852afd3da74ab111323d38bd05"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/FEATURES_AND_LIMITS.md",
+      "size_bytes": 1083,
+      "sha256": "08bf5e3e0aab64d14e2dee20644ac6c442bc58c0cfb8dd1fc357707f8a5d1413"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/KNOWN_LIMITATIONS.md",
+      "size_bytes": 1103,
+      "sha256": "52f8d073d8c1047548a0364a1c36807d30fc64077f080c7c17c1e3f70733ec6b"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/MASTER_BUILD_PROMPT.md",
+      "size_bytes": 4236,
+      "sha256": "108bab83cc02fb40cbbb562e240b7b3b6ecd0872386d10825fbe845770dfed23"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/PERMISSIONS_MATRIX.md",
+      "size_bytes": 1489,
+      "sha256": "c8c8775565a9ed93ddb2e3c5300e5077f7413b70acdf60039151bc87918c04cc"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/TEST_PLAN.md",
+      "size_bytes": 1387,
+      "sha256": "a62707d89822e8201452ef04e6c5655daacc2106c3649466c4f0eb8f2e503125"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/docs/VOICE_CHAT.md",
+      "size_bytes": 871,
+      "sha256": "5d86400637fbc9e88d695fc256b9255f793f2475ee00ca8119b3f3f510bd9e31"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/scripts/build.sh",
+      "size_bytes": 367,
+      "sha256": "8d8822629367241a86a791cab562eb9af851e55552ae84b0d2e06d5279e6132a"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/scripts/termux-setup.sh",
+      "size_bytes": 233,
+      "sha256": "7b24266a4e7d60a559e8c3d9611cb41e471020a4ba9180798274b16f28d3c89b"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/app.js",
+      "size_bytes": 8764,
+      "sha256": "174ac50dcee44687804d312bd9e1b890fc49b4d975385305f8d25afc9a417938"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/assets/adam-avatar.svg",
+      "size_bytes": 631,
+      "sha256": "5167761e6b5c812380c27f87f79de02e32b75a6eefbeb02c5380ad64ed0d5f1d"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/assets/kajal-avatar.svg",
+      "size_bytes": 635,
+      "sha256": "d3cfcf98915b7e20ed63d07ccab8e620c7ecae74a8e32f72f6924586ab0f8b38"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/assets/openjarvis.svg",
+      "size_bytes": 697,
+      "sha256": "b25097d5e7f82154b36063b65e483a75c9b71b1c02da6698f779fea3777ce1c9"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/config.js",
+      "size_bytes": 135,
+      "sha256": "5152f2e860468b7a5415038680344959411d420c5ccc54d83c3c248ad05fb74a"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/index.html",
+      "size_bytes": 2799,
+      "sha256": "598aef05402b346d63cc040c3067b6529d4473a6f894461e839cf1d2b705a900"
+    },
+    {
+      "path": "extras/legacy-pro-starter/OpenJarvis_Pro/web/styles.css",
+      "size_bytes": 7026,
+      "sha256": "1495e68882378ed534373f4e23239d1fe59773f7120079153aaa70a3da52fed6"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/.env.example",
+      "size_bytes": 73,
+      "sha256": "9ce6ceb36a09b71d884a0df68d11ea92fc5c4caff464ee119a98961df346fe91"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/.gitignore",
+      "size_bytes": 69,
+      "sha256": "6490c28a3bcd6fcc9f372ded2200e7f7642ba3da5aacd7710be5ffe2e8fa343b"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/README.md",
+      "size_bytes": 1362,
+      "sha256": "de05be1f532e539111251bd5ff3e5eca50052731bcd15d61cf5488b3d33b3778"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/app.py",
+      "size_bytes": 2119,
+      "sha256": "5277963b0ef89e00c31b2de43a2dd5514b4e4257b318336c904a4861b01366bf"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/core/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/core/chat_engine.py",
+      "size_bytes": 1431,
+      "sha256": "ca28fdbc89752576349bda7c975921394dbf8e749e81f49ffcdfc552b12dfdd5"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/core/device_info.py",
+      "size_bytes": 768,
+      "sha256": "f8cd47f98a845ccce5bb1fbeacd0231e3e8e7bf5c30674cb70d51a5580f4dd42"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/core/state_manager.py",
+      "size_bytes": 1081,
+      "sha256": "eeaed08e50ffb5035bbb255d4183a3911366fd2ceb18a099088c11a8de0ed153"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/debugger/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/debugger/logger.py",
+      "size_bytes": 252,
+      "sha256": "cfabe0333d9efd75ea7b461a67154ee59dc7d9b966caf28b8e279593bc85fa57"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/debugger/self_heal.py",
+      "size_bytes": 471,
+      "sha256": "d509ed718fc271796ea79d468ec417967ef849e2a89bda51311d6bd48867c301"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/freefire_craftland/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/freefire_craftland/blueprint.py",
+      "size_bytes": 866,
+      "sha256": "5b91cb742d2637050e9693a2b060bfc13b34332f80b62c92d432638fb734c338"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/social_hub/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/social_hub/youtube_feed.py",
+      "size_bytes": 711,
+      "sha256": "5594fc80e370549e648c30d6409189c9e55d6b0114f193cd2ac346b04c20664c"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/static/index.html",
+      "size_bytes": 1826,
+      "sha256": "3e13f9b7173f0ee8156892e2b3e98eaace96b8748c525d54eecb46207f757aff"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/updater/__init__.py",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "extras/python-termux-starter/OpenJarvis/updater/ota.py",
+      "size_bytes": 1059,
+      "sha256": "567d5ab22c22b91d0429fe556f835c2fa78649a7f432328626835e65a1ec385a"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 1056,
+      "sha256": "6980aba3fad308702d08c932c8e5eb4562cd6508ea3e3673fecd3316462ffaea"
+    },
+    {
+      "path": "knowledge/craftland-research/OpenJarvis_Craftland_Repository_Research_Bundle_v2.pdf",
+      "size_bytes": 19738,
+      "sha256": "43fb4ac4332d0f468a6862a2942c9723c48e677447211accc0705efdd1555a33"
+    },
+    {
+      "path": "knowledge/craftland-research/README_Craftland_Repository.txt",
+      "size_bytes": 720,
+      "sha256": "79ffa300b2f73016d0a1304ae91502d860d0cc47e32e67c12628df93276fc724"
+    },
+    {
+      "path": "knowledge/craftland-research/craftland_repository_manifest.json",
+      "size_bytes": 9420,
+      "sha256": "15e3352aeb254f1a3d9af2598c6c14b4499143e5aae9186402d4218823c7ac64"
+    },
+    {
+      "path": "metadata.json",
+      "size_bytes": 357,
+      "sha256": "b3ef2c1ae946ec3776ac92781e3c0a701a5daf06bb79abc338987e49f84bd857"
+    },
+    {
+      "path": "package.json",
+      "size_bytes": 903,
+      "sha256": "885c9170f38b076cc5cdf18a608a57b61ba74907f4af41a4f5028867b243ab68"
+    },
+    {
+      "path": "prompts/OPENJARVIS_MASTER_PROMPT_REFERENCE.md",
+      "size_bytes": 7956,
+      "sha256": "c3f6f38451e41c7db81e63466727172792c3f43c19271d1babcc6b0a6506f5b1"
+    },
+    {
+      "path": "prompts/prompts/CLAUDE_MASTER_BUILD_PROMPT.md",
+      "size_bytes": 7956,
+      "sha256": "c3f6f38451e41c7db81e63466727172792c3f43c19271d1babcc6b0a6506f5b1"
+    },
+    {
+      "path": "prompts/prompts/FINAL_CLAUDE_BUILD_PROMPT.md",
+      "size_bytes": 6384,
+      "sha256": "9c631c63da5f45e8c95ba26aded0c16f8191bde7c7891cc0eca613a15db370e3"
+    },
+    {
+      "path": "public/assets/brand-extras/adam-avatar.svg",
+      "size_bytes": 631,
+      "sha256": "5167761e6b5c812380c27f87f79de02e32b75a6eefbeb02c5380ad64ed0d5f1d"
+    },
+    {
+      "path": "public/assets/brand-extras/kajal-avatar.svg",
+      "size_bytes": 635,
+      "sha256": "d3cfcf98915b7e20ed63d07ccab8e620c7ecae74a8e32f72f6924586ab0f8b38"
+    },
+    {
+      "path": "public/assets/brand-extras/openjarvis.svg",
+      "size_bytes": 697,
+      "sha256": "b25097d5e7f82154b36063b65e483a75c9b71b1c02da6698f779fea3777ce1c9"
+    },
+    {
+      "path": "public/assets/jarvis_logo.webp",
+      "size_bytes": 112018,
+      "sha256": "f362124b77a837c6390664a0fc3deab82c42e306f3dd1e72a63897c27dad1014"
+    },
+    {
+      "path": "public/assets/openjarvis_clean_neon_ui_reference.png",
+      "size_bytes": 2066956,
+      "sha256": "c7f47fc034e0436cb39a1d9d70553f1149d5352f7aef53523575b76070ce0aa0"
+    },
+    {
+      "path": "public/assets/ui_adam.webp",
+      "size_bytes": 131244,
+      "sha256": "3a841272743c0a93b6571ca94688e9933f9a9a237043e735fd2875b418620b59"
+    },
+    {
+      "path": "public/assets/ui_kajal.webp",
+      "size_bytes": 158766,
+      "sha256": "0a3970be424576693a9f061b411c73ad28704c38c2b50fce4e8f3a1feb364c4f"
+    },
+    {
+      "path": "public/assets/ui_reference_adam.png",
+      "size_bytes": 2019704,
+      "sha256": "c069d2106ddd3a94cb62634b9bfdab43392fb0523ce3f198b788331439fcf4dc"
+    },
+    {
+      "path": "public/assets/ui_reference_kajal.png",
+      "size_bytes": 2017593,
+      "sha256": "740f5a492c82c6e8a93653aca6f5ade1baa450ae43db3257060e7778914dc40e"
+    },
+    {
+      "path": "scripts/termux-prerequisites.sh",
+      "size_bytes": 323,
+      "sha256": "e71af7393f8853ab3f670f08e46a1ff95a6c94b2c9538753e4d0bdd1ee42eb43"
+    },
+    {
+      "path": "server.ts",
+      "size_bytes": 10353,
+      "sha256": "1d69350f645e835e24d4143e77b56bbc150d2d673a6df0994f3645de52d3302f"
+    },
+    {
+      "path": "src/App.tsx",
+      "size_bytes": 10339,
+      "sha256": "78852e3e252580605041a186912a65f1891bb509a2ad3190504fe2b12a73fb5e"
+    },
+    {
+      "path": "src/components/ApiScreen.tsx",
+      "size_bytes": 7974,
+      "sha256": "3c03f96a6bf340e559263d8f568f71bdd28b8ebc0b5b9a32187c7dd3bb350996"
+    },
+    {
+      "path": "src/components/HomeScreen.tsx",
+      "size_bytes": 16191,
+      "sha256": "1ea13c088b08807eecd220786841957c630c4e4b90a805a6cf8af8c7471d7e32"
+    },
+    {
+      "path": "src/components/MemoryScreen.tsx",
+      "size_bytes": 7326,
+      "sha256": "3aa82f1cde85b51c481275d97b06388319c70e099d3358e41ae5be95c4c362b6"
+    },
+    {
+      "path": "src/components/NavigationDrawer.tsx",
+      "size_bytes": 8320,
+      "sha256": "1eff4b0e2053ec39ffa6adb4da428621593138dbef0b46fee56053b366abb5a3"
+    },
+    {
+      "path": "src/components/PermissionsScreen.tsx",
+      "size_bytes": 8294,
+      "sha256": "45f094b64b25f3000bebd1a5475f07502d5e6f3aecf351f1743a6368a21bafd8"
+    },
+    {
+      "path": "src/components/VirtualPhone.tsx",
+      "size_bytes": 36031,
+      "sha256": "806fb8b0b846720c111f2e260eb61fbfb64469aa2234104759605d596382a1fa"
+    },
+    {
+      "path": "src/index.css",
+      "size_bytes": 1432,
+      "sha256": "f416886db43b800cd3d771de598f0faefa923f3d8cba8910fc9d0848f45bca6b"
+    },
+    {
+      "path": "src/main.tsx",
+      "size_bytes": 159,
+      "sha256": "30d02ee59cb6576973dea4368093b2dcae692a40668f288fdbc66a114873fcd3"
+    },
+    {
+      "path": "src/services/memory.ts",
+      "size_bytes": 2921,
+      "sha256": "ee448be06d0745b1fb78954917a564f07504b5d8d7a2aa83bdfb12a4faa0a999"
+    },
+    {
+      "path": "src/services/speech.ts",
+      "size_bytes": 5796,
+      "sha256": "ce11f76a0265cdf9490df30d87d2833a6efcc0254c9d18487cb548e21ab2a50d"
+    },
+    {
+      "path": "src/services/virtualDevice.ts",
+      "size_bytes": 15971,
+      "sha256": "d0e0ff3a2e5736349add022db7fd17b323ae233384206ba5c7377f5dffffaaca"
+    },
+    {
+      "path": "src/types/jarvis.ts",
+      "size_bytes": 1245,
+      "sha256": "8815718fdd7ccff1b23061c9b22d33a5d9a2530bb8cf64435700850207f0fe02"
+    },
+    {
+      "path": "tsconfig.json",
+      "size_bytes": 561,
+      "sha256": "cbc914147cc208c35cb5f6d405f0f0bc3c1c76ae76bf45bbc4f588b924492d2a"
+    },
+    {
+      "path": "vite.config.ts",
+      "size_bytes": 705,
+      "sha256": "a7aa711292e5ad7eb10f7a17f5f34fbbf75c7b7c24d59cb0212c60bc493c3208"
+    }
+  ]
+}

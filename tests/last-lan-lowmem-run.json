@@ -1,0 +1,43 @@
+{
+ "at": "2026-11-08T05:59:25.183Z",
+ "lanTested": true,
+ "total": 7,
+ "failed": 0,
+ "results": [
+  {
+   "n": "LAN client without token → 401",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "LAN client with wrong token → 401",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "LAN client with correct token → 200",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "LAN client cannot read settings without token",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "loopback client needs no token",
+   "pass": true,
+   "d": ""
+  },
+  {
+   "n": "server alive with 48 MB JS heap limit after 300 chat + 100 page requests",
+   "pass": true,
+   "d": "fail=0"
+  },
+  {
+   "n": "server RSS stays small (idle 49 MB → 73 MB after load; limit 120 MB)",
+   "pass": true,
+   "d": "73 MB"
+  }
+ ]
+}
