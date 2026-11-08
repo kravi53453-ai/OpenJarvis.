@@ -41,13 +41,32 @@ export default function VoiceMode({ persona, lang, cloudVoice, send, onClose, on
   useEffect(() => { if (!sttSupported()) setError('Speech recognition is not available here. Use Chrome on localhost, or the OpenJarvis Android app.'); return () => { active.current = false; stopListening(); stopSpeaking(); }; }, []);
   const label = { idle: 'Tap the orb to talk', listening: 'Listening…', thinking: 'Thinking…', speaking: 'Speaking…' }[phase];
   return (
-    <div className="voice" role="dialog" aria-label="Voice mode">
-      <button className="iconbtn" style={{ position: 'absolute', top: 12, right: 12 }} onClick={() => { halt(); onClose(); }} aria-label="Close voice mode"><Icon name="x" /></button>
-      <img src={persona === 'ADAM' ? '/assets/ui_adam.webp' : '/assets/ui_kajal.webp'} alt="" width={72} height={72} style={{ borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }} />
-      <button className={`orb ${phase}`} onClick={toggle} aria-label={phase === 'idle' ? 'Start voice' : 'Stop voice'}><Icon name={phase === 'idle' ? 'mic' : 'stop'} size={44} /></button>
-      <div className="vs">{label}</div>
-      <div className="vt">{text}</div>
-      {error && <div className="warnbox" style={{ maxWidth: 420 }}>{error}</div>}
+    <div className="voice" role="dialog" aria-label="OpenJarvis voice chat">
+      <div className="voice-top">
+        <div className="voice-persona">
+          <img src={persona === 'ADAM' ? '/assets/ui_adam.webp' : '/assets/ui_kajal.webp'} alt="" />
+          <div><strong>{persona === 'ADAM' ? 'Adam' : 'Kajal'}</strong><span>OpenJarvis voice</span></div>
+        </div>
+        <button className="iconbtn voice-close" onClick={() => { halt(); onClose(); }} aria-label="Close voice mode"><Icon name="x" /></button>
+      </div>
+      <div className="voice-center">
+        <div className={`voice-rings ${phase}`}>
+          <button className={`orb ${phase}`} onClick={toggle} aria-label={phase === 'idle' ? 'Start voice' : 'Stop voice'}>
+            <Icon name={phase === 'idle' ? 'mic' : phase === 'thinking' ? 'loader-circle' : 'audio-lines'} size={38} />
+          </button>
+        </div>
+        <div className="vs">{label}</div>
+        <div className="vt">{text || (phase === 'idle' ? 'Speak naturally. I’m listening when you’re ready.' : '')}</div>
+        {error && <div className="warnbox voice-error">{error}</div>}
+      </div>
+      <div className="voice-bottom">
+        <span className={`voice-state ${phase}`}><i />{label}</span>
+        <button className="voice-main-control" onClick={toggle}>
+          <Icon name={phase === 'idle' ? 'mic' : 'square'} size={20} />
+          {phase === 'idle' ? 'Start conversation' : 'End conversation'}
+        </button>
+        <p>Your microphone pauses while {persona === 'ADAM' ? 'Adam' : 'Kajal'} speaks.</p>
+      </div>
     </div>
   );
 }
