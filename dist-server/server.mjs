@@ -9,7 +9,6 @@ import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 
 // server/offline.ts
-import { spawn } from "node:child_process";
 import crypto from "node:crypto";
 import fs2 from "node:fs";
 import os from "node:os";
@@ -529,8 +528,11 @@ function findBinary(name) {
   }
   return null;
 }
-function startServer(file, ctx = 1024, port = 8080) {
+async function startServer(file, ctx = 1024, port = 8080) {
   if (!/^[\w.-]+\.gguf$/.test(file) || !fs2.existsSync(path2.join(modelsDir(), file))) throw new Error("Model file not found. Download it first.");
+  if (process.env.OPENJARVIS_ANDROID === "1") {
+    throw new Error("Native offline inference is not installed in this Android build yet. Model downloads and management remain available.");
+  }
   const bin = findBinary("llama-server");
   if (!bin) throw new Error("llama-server not found. In Termux run: pkg install llama-cpp");
   const c = Math.min(4096, Math.max(512, Math.floor(ctx)));
@@ -538,6 +540,7 @@ function startServer(file, ctx = 1024, port = 8080) {
   logTail.length = 0;
   serverState = "starting";
   serverFile = file;
+  const { spawn } = await import("node:child_process");
   server = spawn(bin, ["-m", path2.join(modelsDir(), file), "--host", "127.0.0.1", "--port", String(port), "-c", String(c), "-t", String(Math.max(1, Math.min(4, os.cpus().length)))], { stdio: ["ignore", "pipe", "pipe"] });
   const push = (b) => {
     for (const l of b.toString().split("\n")) if (l.trim()) {
@@ -923,7 +926,7 @@ async function api(req, res, url) {
   if (route === "POST /api/offline/server/start") {
     const b = await readBody(req);
     try {
-      startServer(str(b.file, 120, "file"), Number(b.contextSize) || getSettings().offline.contextSize);
+      await startServer(str(b.file, 120, "file"), Number(b.contextSize) || getSettings().offline.contextSize);
     } catch (e) {
       throw new HttpError(400, e instanceof Error ? e.message : "Cannot start");
     }
