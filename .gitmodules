@@ -1,0 +1,15 @@
+[submodule "vendor/upstream/llama.cpp"]
+	path = vendor/upstream/llama.cpp
+	url = https://github.com/ggml-org/llama.cpp.git
+[submodule "vendor/upstream/mediapipe"]
+	path = vendor/upstream/mediapipe
+	url = https://github.com/google-ai-edge/mediapipe.git
+[submodule "vendor/upstream/pocketpal-ai"]
+	path = vendor/upstream/pocketpal-ai
+	url = https://github.com/a-ghorbani/pocketpal-ai.git
+[submodule "vendor/user/blank-app"]
+	path = vendor/user/blank-app
+	url = https://github.com/kravi53453-ai/blank-app.git
+[submodule "vendor/user/OpenJarvis-"]
+	path = vendor/user/OpenJarvis-
+	url = https://github.com/kravi53453-ai/OpenJarvis-.git
