@@ -29,11 +29,25 @@ export default function VoiceMode({ persona, lang, cloudVoice, send, onClose, on
     const t = heard.current.trim();
     if (!t) { if (++empties.current >= 3) { setError('I did not hear anything. Tap the orb to try again.'); halt(); return; } window.setTimeout(listen, 700); return; }
     empties.current = 0; setText(t); setPhase('thinking');
-    const reply = await send(t);
+    let reply: string;
+    try {
+      reply = await send(t);
+    } catch (e) {
+      if (!active.current) return;
+      setError(e instanceof Error ? e.message : 'Could not send the voice message. Check your connection and try again.');
+      halt();
+      return;
+    }
     if (!active.current) return;
     setPhase('speaking'); setText(reply);
-    const r = await speak(reply, persona, cloudVoice);
-    if (r.notice) setError(r.notice);
+    try {
+      const r = await speak(reply, persona, cloudVoice);
+      if (r.notice) setError(r.notice);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Voice playback failed. Tap Start to try again.');
+      halt();
+      return;
+    }
     if (active.current) listen();
   };
   const toggle = () => { if (active.current) { halt(); onStopAll(); } else { setError(''); empties.current = 0; active.current = true; listen(); } };
