@@ -43,6 +43,9 @@ try {
   ok('home shows "Hi Ravi" and OpenJarvis title', await page.locator('h1', { hasText: 'OpenJarvis' }).count() === 1);
   await page.waitForSelector('text=No API key'); ok('status pill says Cloud · No API key (honest, not fake-connected)', (await page.locator('.pill').innerText()).includes('Cloud'));
   ok('guidance to add key is shown', await page.locator('text=Add your API key in Menu → Providers').count() === 1);
+  await page.fill('textarea', 'good   morning'); await page.keyboard.press('Enter');
+  await page.waitForSelector('.bub.ai:has-text("Hello! I’m OpenJarvis.")');
+  ok('local small talk handles repeated spaces without an API key', true);
   await shot('01-home-light');
 
   // Providers: save, test, use
