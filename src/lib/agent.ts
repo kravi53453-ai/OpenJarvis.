@@ -6,7 +6,7 @@ import type { Msg, PersonaId, ToolCall, ToolResult } from './types';
 
 /** Tiny deterministic replies for conversational openers; never pretends to answer factual questions. */
 export function localSmallTalk(input: string): string | null {
-  const q = input.toLocaleLowerCase().replace(/[!?.,。！？'"]/g, '').replace(/\\s+/g, ' ').trim();
+  const q = input.toLocaleLowerCase().replace(/[!?.,。！？'"]/g, '').replace(/\s+/g, ' ').trim();
   if (!q || q.length > 100) return null;
   if (/^(hi|hello|hey|hiya|good morning|good afternoon|good evening|namaste|नमस्ते|नमस्कार|हेलो|हाय)$/.test(q))
     return 'Hello! I’m OpenJarvis. How can I help you today?';
