@@ -6,9 +6,32 @@ name: Build Android APK
 
 on:
   workflow_dispatch: {}
+  pull_request:
+    branches: [main]
+    paths:
+      - 'android/**'
+      - 'src/**'
+      - 'server/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'index.html'
+      - '.github/workflows/android.yml'
   push:
     branches: [main]
-    paths: ['android/**', '.github/workflows/android.yml']
+    paths:
+      - 'android/**'
+      - 'src/**'
+      - 'server/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'index.html'
+      - '.github/workflows/android.yml'
 
 permissions:
   contents: write   # needed to attach the APK to a Release
@@ -19,6 +42,31 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install locked Node dependencies
+        run: npm ci
+
+      - name: TypeScript strict checks
+        run: npm run typecheck
+
+      - name: Build web UI and backend bundles
+        run: npm run build
+
+      - name: Backend, download manager and low-memory tests
+        run: npm test
+
+      - name: Install Playwright for browser regression tests
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+
+      - name: Browser UI regression tests
+        run: npm run test:ui
 
       - uses: actions/setup-java@v4
         with: { distribution: temurin, java-version: '17' }
@@ -33,12 +81,17 @@ jobs:
 
       - name: Build debug APK
         working-directory: android
-        run: gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee ../build-log.txt
+        run: |
+          set -o pipefail
+          gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee ../build-log.txt
 
       - name: Name the APK
         run: |
           cp android/app/build/outputs/apk/debug/app-debug.apk OpenJarvis-debug.apk
-          ls -la OpenJarvis-debug.apk
+          test -s OpenJarvis-debug.apk
+          unzip -t OpenJarvis-debug.apk
+          "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging OpenJarvis-debug.apk | grep -q "package: name='com.openjarvis.app'"
+          ls -lh OpenJarvis-debug.apk
           sha256sum OpenJarvis-debug.apk | tee OpenJarvis-debug.apk.sha256
 
       - name: Keep the build log (even on failure)
