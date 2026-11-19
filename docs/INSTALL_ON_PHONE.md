@@ -1,53 +1,47 @@
-# Install OpenJarvis using only an Android phone
+# Install OpenJarvis from this repository using an Android phone
 
-**Honest status:** the APK has **not been built yet**. These steps make GitHub build it for you (free). It is the first real build, so it may fail once — Step 7 tells you what to do if it does.
+## 1. Build the current source on GitHub
 
-## Part A — Get the APK built (about 20 minutes, one time)
+1. Open this repository on GitHub and select branch `work/complete-android-voice-apk` (or the branch you want to test).
+2. Open **Actions → OpenJarvis Android APK**.
+3. Select **Run workflow**, choose your branch, and start it. A push or pull request touching app/source files also starts the workflow.
+4. Wait for both jobs to finish successfully. If the Android job fails, download **OpenJarvis-android-build-log** and inspect the final Gradle error.
+5. Download **OpenJarvis-debug-APK**. It contains `OpenJarvis-debug.apk` and its SHA-256 checksum.
+6. Download **OpenJarvis-complete-source** separately for the source ZIP.
 
-**1. GitHub account + empty repository**
-* In your phone browser go to github.com and sign up / sign in.
-* Open github.com/new → name it `openjarvis` → keep **Private** → do **not** tick "Add a README" → **Create repository**.
+The checked-in root `OpenJarvis.apk` may be an older artifact. Prefer the APK produced by the successful workflow run for the exact branch commit you tested.
 
-**2. Create a token (your password for the upload)**
-* github.com → your photo → Settings → Developer settings → Personal access tokens → **Tokens (classic)** → Generate new token (classic).
-* Note: `openjarvis`, Expiration: 7 days, tick **repo** and **workflow** → Generate. **Copy the token** (starts with `ghp_`). Never share it or paste it into any chat.
+## 2. Install and start
 
-**3. Put the project in Termux**
-* Install **Termux from F-Droid** (not Play Store). Open it and run:
-```sh
-termux-setup-storage
-cp ~/storage/downloads/OpenJarvis.zip ~ && pkg install -y unzip git
-unzip OpenJarvis.zip && cd OpenJarvis
-```
+1. Download the APK artifact to your phone and extract it if GitHub provides it as an archive.
+2. Open `OpenJarvis-debug.apk`. If Android asks, allow your browser or file manager to install unknown apps. This is a debug APK, not a Play Store release.
+3. The Android app is a native shell around the OpenJarvis web UI. Start the backend separately in Termux:
+   ```sh
+   cd ~/OpenJarvis
+   termux-wake-lock
+   npm start
+   ```
+   Complete the Termux setup once using `sh scripts/termux-setup.sh`.
+4. Open OpenJarvis. Its default backend is `http://127.0.0.1:3000`. If the server is not running, the app cannot load the chat UI.
+5. Choose Offline mode and configure a supported local model server if you want no API key. A model must be downloaded/installed separately; the app does not magically include a capable model.
 
-**4. Upload (this starts the build automatically)**
-```sh
-sh scripts/publish-to-github.sh
-```
-Type your GitHub username, the repo name (`openjarvis`), and paste the token (it stays hidden).
+## 3. Optional Android control permissions
 
-**5. Watch the build**
-* Open `github.com/<you>/openjarvis/actions` → the run *Build Android APK* → wait for a **green tick** (5–10 min).
+Grant only permissions you intend to use. Screen interaction requires manually enabling OpenJarvis under Android Settings → Accessibility. Android may require **Allow restricted settings** for a sideloaded app on newer Android versions.
 
-**6. Download the APK**
-* Open `github.com/<you>/openjarvis/releases/latest` → tap **OpenJarvis-debug.apk**.
+Calls require confirmation and Android permissions. Screenshots require Android's own screen-capture consent. Secure windows, password fields, background-launch restrictions and some app-specific protections cannot be bypassed.
 
-**7. If the run is red:** open the run → tap the red step → copy the last ~40 lines of the log (or download the **build-log** artifact) and send them to me. The code gets fixed and you re-run Step 4 (it only uploads the changes).
+## 4. Voice reality check
 
-## Part B — Install and start
-1. Open the downloaded APK. If Android asks, allow **Install unknown apps** for your browser, then Install. (Play Protect may warn because it is an unsigned-by-store debug build; choose *Install anyway* only if you built it yourself as above.)
-2. In Termux, every time you want to use OpenJarvis:
-```sh
-cd ~/OpenJarvis && termux-wake-lock && npm start
-```
-(first time only: `sh scripts/termux-setup.sh`). Leave Termux running.
-3. Open the **OpenJarvis** app. It connects to the Termux server. If it says "server not reachable", the server is not running.
-4. Follow the permission screens. Allow only what you want; every one can be skipped.
-5. Add your API key: Menu → **Providers & API keys** → paste your own key → **Test connection**.
+Adam and Kajal are persona choices in the UI. Android uses the speech-recognition service and text-to-speech voices installed on the phone; the available voice, accent and gender selection depend on that engine. Speech recognition may need internet unless a compatible offline language pack is installed and selected. Test with network disabled before relying on offline voice.
 
-## Part C — Turn on screen control (optional, most powerful)
-Android Settings → Accessibility → Installed apps → **OpenJarvis** → On.
-If Android says "Restricted setting": Settings → Apps → OpenJarvis → ⋮ (top right) → **Allow restricted settings**, then try again. Turn it off any time in the same place, or press **Stop** in OpenJarvis's notification.
+## 5. First device checks
 
-## Tips for a 2 GB phone
-Close other apps first. Keep **Low-power mode** on (default on 2 GB devices). Use Cloud Mode for quality; Offline Mode only with the smallest model (Qwen2.5 0.5B) and expect it to be slow.
+- Launch app with Termux backend running.
+- Test a text chat in Offline mode with a local model.
+- Test microphone permission and speech input.
+- Test Adam and Kajal playback and check the actual installed voice selected.
+- Test one harmless Accessibility action after explicitly enabling the service.
+- Test Stop and revoke permissions afterwards.
+
+A green CI build means compilation/package steps succeeded; it does not mean these real-device checks passed.
