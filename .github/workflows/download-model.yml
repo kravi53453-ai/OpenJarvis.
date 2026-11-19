@@ -1,0 +1,41 @@
+name: Download OpenJarvis Qwen3 offline model
+
+on:
+  push:
+    branches:
+      - work/complete-android-voice-apk
+    paths:
+      - .github/workflows/download-model.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/download-model.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Download public LiteRT Qwen3 0.6B INT4 model
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://huggingface.co/litert-community/Qwen3-0.6B/resolve/main/Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm?download=true'
+          curl --fail --location --retry 5 --retry-all-errors --connect-timeout 30 --output Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm "$URL"
+          SIZE="$(stat -c%s Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm)"
+          test "$SIZE" -ge 300000000
+          sha256sum Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm > Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm.sha256
+          printf 'Downloaded bytes: %s\n' "$SIZE"
+          cat Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm.sha256
+      - uses: actions/upload-artifact@v4
+        with:
+          name: OpenJarvis-Qwen3-0.6B-INT4-Model
+          path: |
+            Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm
+            Qwen3-0.6B_dynamic_wi4b32_afp32.litertlm.sha256
+          retention-days: 30
