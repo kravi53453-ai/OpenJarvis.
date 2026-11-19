@@ -20,8 +20,8 @@ Every permission is requested separately with an explanation (Menu → Android p
 
 ## Build it
 **A. GitHub Actions, phone only (recommended):** follow `docs/INSTALL_ON_PHONE.md` — `scripts/publish-to-github.sh` uploads the project, the workflow builds `OpenJarvis-debug.apk` and attaches it to a Release you can tap to download. (Workflow never run yet.)
-**B. PC with Android Studio:** open the `android/` folder, let it sync (SDK 34), *Build → Build APK(s)*.
-**C. Command line on a PC:** install JDK 17 + Android SDK 34 (`ANDROID_HOME`), then `cd android && gradle wrapper --gradle-version 8.7 && ./gradlew assembleDebug` → `app/build/outputs/apk/debug/app-debug.apk`. (The Gradle wrapper JAR is not included because it could not be generated offline.)
+**B. PC with Android Studio:** open the `android/` folder, let it sync (SDK 34), then choose *Build → Build APK(s)*.
+**C. Command line on a PC:** install JDK 17, Android SDK 34 and Gradle 8.7, then run `cd android && gradle assembleDebug` → `app/build/outputs/apk/debug/app-debug.apk`. The repository does not include a Gradle wrapper script/JAR.
 
 Pinned versions you may need to bump: AGP 8.5.2, Kotlin 1.9.24, CameraX 1.3.4, activity-ktx 1.9.1, core-ktx 1.13.1, exifinterface 1.3.7.
 
