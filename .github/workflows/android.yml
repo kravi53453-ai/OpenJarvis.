@@ -1,61 +1,110 @@
-# Builds OpenJarvis-debug.apk on GitHub's servers — no PC or Android SDK needed on your side.
-# Runs automatically on every push to main that touches android/, and can be started by hand (Actions → Build Android APK → Run workflow).
-# STATUS: written by the author but NEVER RUN (author had no GitHub access). If it fails, open the run, then the "build-log" artifact
-# (or the failing step) and send the last ~40 lines back so the code can be fixed.
-name: Build Android APK
+name: OpenJarvis Android APK
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
   push:
-    branches: [main]
-    paths: ['android/**', '.github/workflows/android.yml']
+    branches: ["**"]
+    paths:
+      - "android/**"
+      - "src/**"
+      - "server/**"
+      - "public/**"
+      - "dist/**"
+      - "dist-server/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/android.yml"
+  pull_request:
+    paths:
+      - "android/**"
+      - "src/**"
+      - "server/**"
+      - "public/**"
+      - "dist/**"
+      - "dist-server/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/android.yml"
 
 permissions:
-  contents: write   # needed to attach the APK to a Release
+  contents: read
 
 jobs:
-  apk:
+  verify:
+    name: Web/server checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run test:ui
+
+  android:
+    name: Build Android debug APK
     runs-on: ubuntu-latest
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-java@v4
-        with: { distribution: temurin, java-version: '17' }
+        with:
+          distribution: temurin
+          java-version: "17"
 
-      - name: Install Android SDK (platform 34, build-tools 34)
-        uses: android-actions/setup-android@v3
-
-      - run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK platform and build tools
+        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
 
       - uses: gradle/actions/setup-gradle@v4
-        with: { gradle-version: '8.7' }
+        with:
+          gradle-version: "8.7"
 
       - name: Build debug APK
         working-directory: android
-        run: gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee ../build-log.txt
+        shell: bash
+        run: |
+          set -o pipefail
+          gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee ../android-build.log
 
-      - name: Name the APK
+      - name: Prepare APK and source archive
+        if: success()
+        shell: bash
         run: |
           cp android/app/build/outputs/apk/debug/app-debug.apk OpenJarvis-debug.apk
-          ls -la OpenJarvis-debug.apk
-          sha256sum OpenJarvis-debug.apk | tee OpenJarvis-debug.apk.sha256
+          sha256sum OpenJarvis-debug.apk > OpenJarvis-debug.apk.sha256
+          zip -qr OpenJarvis-source.zip . \
+            -x ".git/*" "node_modules/*" "android/.gradle/*" "android/**/build/*" \
+               "OpenJarvis.apk" "*Backup.zip" "OpenJarvis-source.zip"
 
-      - name: Keep the build log (even on failure)
-        if: always()
+      - name: Upload APK
+        if: success()
         uses: actions/upload-artifact@v4
-        with: { name: build-log, path: build-log.txt, if-no-files-found: ignore }
-
-      - uses: actions/upload-artifact@v4
-        with: { name: OpenJarvis-debug-apk, path: OpenJarvis-debug.apk }
-
-      - name: Publish a Release (tap-to-download link for your phone)
-        uses: softprops/action-gh-release@v2
         with:
-          tag_name: debug-${{ github.run_number }}
-          name: OpenJarvis debug build ${{ github.run_number }}
-          body: "Debug APK built by GitHub Actions. Install: download OpenJarvis-debug.apk, allow 'Install unknown apps' for your browser, open it. Compare the SHA-256 file if you like."
-          files: |
+          name: OpenJarvis-debug-APK
+          path: |
             OpenJarvis-debug.apk
             OpenJarvis-debug.apk.sha256
-          make_latest: true
+          retention-days: 30
+
+      - name: Upload complete source ZIP
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenJarvis-complete-source
+          path: OpenJarvis-source.zip
+          retention-days: 30
+
+      - name: Keep Android build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: OpenJarvis-android-build-log
+          path: android-build.log
+          if-no-files-found: ignore
+          retention-days: 14
