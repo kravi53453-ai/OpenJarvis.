@@ -7,7 +7,7 @@ It has two parts:
 | Part | What it is | Status |
 |---|---|---|
 | **Server + web UI** (`server/`, `src/`, prebuilt in `dist*/`) | Runs in Termux (or any PC). Zero runtime dependencies. Cloud providers, Offline mode, model manager, chat, memory. | Built, type-checked and tested (see `TEST_REPORT.md`) |
-| **Native Android app** (`android/`) | WebView shell + real Android features: AccessibilityService screen control, CameraX camera, calls, contacts, speech, screenshots, permissions. | **Written and reviewed but NOT yet compiled or tested** — no Android SDK/GitHub access was available to the author. Build it with GitHub Actions from your phone: **`docs/INSTALL_ON_PHONE.md`**. No APK is included. |
+| **Native Android app** (`android/`) | WebView shell + real Android features: AccessibilityService screen control, CameraX camera, calls, contacts, speech, screenshots, permissions. | **Source is present; CI build and real-device validation are still required.** Use **Actions → OpenJarvis Android APK** on your branch to compile the app and download the APK + complete source ZIP. See `docs/BUILD_APK_AND_SOURCE.md`. The root-level `OpenJarvis.apk`, if present in a checkout, is an older repository artifact and is not evidence that the current source has been built. |
 
 ## Quick start (Termux)
 
@@ -34,7 +34,7 @@ You enter them in the app. They are stored on the device running the server in `
 Server binds to `127.0.0.1` only; Host-header (DNS-rebinding) and cross-origin checks; 6 MB body limit; input validation; rate limits; CSP; path-traversal protection. `HOST=0.0.0.0` (LAN) requires an access token (printed at start or `OPENJARVIS_TOKEN`).
 
 ## Documentation
-`docs/INSTALL_ON_PHONE.md` (phone-only APK build + install) · `docs/TERMUX.md` · `docs/ANDROID_APP.md` · `docs/PERMISSIONS.md` · `docs/PROVIDERS.md` · `docs/LIMITATIONS.md` · `CHANGELOG.md` · `docs/AUDIT_FIX_MAP.md` · `TEST_REPORT.md`
+`docs/BUILD_APK_AND_SOURCE.md` (GitHub APK + source artifacts) · `docs/INSTALL_ON_PHONE.md` (phone install) · `docs/TERMUX.md` · `docs/ANDROID_APP.md` · `docs/PERMISSIONS.md` · `docs/PROVIDERS.md` · `docs/LIMITATIONS.md` · `CHANGELOG.md` · `docs/AUDIT_FIX_MAP.md` · `TEST_REPORT.md`
 
 ## Layout
 `server/` Node backend (TypeScript) · `src/` React UI · `public/assets/` logo + Adam/Kajal portraits · `android/` native app · `tests/` automated tests · `extras/` earlier prototype code, kept (legacy web UI, simulated VirtualPhone demo, Python/Termux starter, legacy Android stub) · `knowledge/` Craftland research (untouched) · `docs/ui-references/` design reference images · `docs/archive/` outdated docs.
